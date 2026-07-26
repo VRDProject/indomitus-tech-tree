@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-07-26T22:42:41.614Z",
+  "nodes": 739,
+  "exactMatches": 732,
+  "fallbacks": [
+    {
+      "id": "prog_ancil_doctrine",
+      "source": "prog_request_for_aid_00.tga"
+    },
+    {
+      "id": "squad_tanith_lasgun(ig)",
+      "source": "tanith_lasgun.dds"
+    },
+    {
+      "id": "squad_tanith_support(ig)",
+      "source": "tanith_ac.dds"
+    },
+    {
+      "id": "squad_tanith_scout(ig)",
+      "source": "tanith_scout.dds"
+    },
+    {
+      "id": "squad_storm_mech(ig)",
+      "source": "ig_storm.dds"
+    },
+    {
+      "id": "taurox",
+      "source": "dg_taurox_00.png"
+    },
+    {
+      "id": "taurox_ac",
+      "source": "dg_taurox_ac_00.png"
+    }
+  ],
+  "atlas": {
+    "cellWidth": 56,
+    "cellHeight": 70,
+    "columns": 28,
+    "rows": 27,
+    "width": 1568,
+    "height": 1890
+  }
+}

@@ -1,0 +1,44 @@
+.research-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 29px;
+  right: 6px;
+  width: 56px;
+  height: 70px;
+  border: 1px solid color-mix(in srgb, var(--section-color) 42%, #354446);
+  background-image: url("./research-atlas.webp");
+  background-repeat: no-repeat;
+  background-size: 1568px 1890px;
+  background-position: var(--research-portrait-position, 0 0);
+  box-shadow: 0 0 14px #000a;
+  opacity: 0.82;
+  pointer-events: none;
+}
+
+.research-card > .card-topline,
+.research-card > h2,
+.research-card > .english-name,
+.research-card > .card-counts,
+.research-card > .card-requirements {
+  position: relative;
+  z-index: 1;
+}
+
+.research-card h2,
+.research-card .english-name {
+  text-shadow: 0 1px 4px #070b0c, 0 0 8px #070b0c;
+}
+
+.research-card:hover::before,
+.research-card:focus-visible::before,
+.research-card.selected::before {
+  border-color: var(--section-color);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .research-card::before {
+    transition: opacity 120ms ease, border-color 120ms ease;
+  }
+}
