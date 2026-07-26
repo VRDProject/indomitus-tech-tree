@@ -69,7 +69,7 @@ Error generating stack: `+e.message+`
 
               const controls = document.querySelector(".zoom-controls");
               const buttons = controls?.querySelectorAll("button");
-              const zoomButton = event.deltaY < 0 ? buttons?.[2] : buttons?.[0];
+              const zoomButton = event.deltaY < 0 ? buttons?.[1] : buttons?.[0];
               if (!zoomButton) return;
 
               const oldScale = readScale(viewport);
