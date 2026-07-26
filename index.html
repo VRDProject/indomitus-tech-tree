@@ -28,5 +28,82 @@ Error generating stack: `+e.message+`
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (() => {
+        const ZOOM_THROTTLE_MS = 55;
+
+        function readScale(viewport) {
+          const transform = viewport.querySelector(".tree-canvas")?.style.transform || "";
+          const match = transform.match(/scale\(([\d.]+)\)/);
+          return match ? Number(match[1]) : 1;
+        }
+
+        function updateHint() {
+          const hint = document.querySelector(
+            ".tree-toolbar > div:first-child > span:last-child",
+          );
+          if (!hint) return;
+
+          const isRussian = hint.textContent.includes("Зажмите");
+          const text = isRussian
+            ? "Зажмите левую кнопку мыши на пустом месте и двигайте древо · Колесо мыши — масштаб"
+            : "Hold the left mouse button on empty space and drag · Mouse wheel to zoom";
+
+          if (hint.textContent !== text) hint.textContent = text;
+        }
+
+        function bindWheelZoom(viewport) {
+          if (viewport.dataset.wheelZoomBound === "true") return;
+          viewport.dataset.wheelZoomBound = "true";
+
+          let lastZoomAt = 0;
+          viewport.addEventListener(
+            "wheel",
+            (event) => {
+              if (event.ctrlKey || event.metaKey || event.deltaY === 0) return;
+              event.preventDefault();
+
+              const now = Date.now();
+              if (now - lastZoomAt < ZOOM_THROTTLE_MS) return;
+              lastZoomAt = now;
+
+              const controls = document.querySelector(".zoom-controls");
+              const buttons = controls?.querySelectorAll("button");
+              const zoomButton = event.deltaY < 0 ? buttons?.[2] : buttons?.[0];
+              if (!zoomButton) return;
+
+              const oldScale = readScale(viewport);
+              const bounds = viewport.getBoundingClientRect();
+              const pointerX = event.clientX - bounds.left;
+              const pointerY = event.clientY - bounds.top;
+              const contentX = viewport.scrollLeft + pointerX;
+              const contentY = viewport.scrollTop + pointerY;
+
+              zoomButton.click();
+              requestAnimationFrame(() => {
+                const newScale = readScale(viewport);
+                if (newScale === oldScale) return;
+
+                const ratio = newScale / oldScale;
+                viewport.scrollLeft = contentX * ratio - pointerX;
+                viewport.scrollTop = contentY * ratio - pointerY;
+              });
+            },
+            { passive: false },
+          );
+        }
+
+        function scan() {
+          document.querySelectorAll(".tree-viewport").forEach(bindWheelZoom);
+          updateHint();
+        }
+
+        new MutationObserver(scan).observe(document.body, {
+          childList: true,
+          subtree: true,
+        });
+        scan();
+      })();
+    </script>
   </body>
 </html>
