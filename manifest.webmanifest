@@ -1,0 +1,32 @@
+{
+  "id": "./",
+  "name": "Call to Arms: Indomitus — Древо исследований",
+  "short_name": "Indomitus Tree",
+  "description": "Интерактивное древо исследований мода Call to Arms: Indomitus с автономным режимом планирования.",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#090e0f",
+  "theme_color": "#11191b",
+  "categories": ["games", "utilities"],
+  "icons": [
+    {
+      "src": "./assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
