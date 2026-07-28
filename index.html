@@ -172,12 +172,54 @@ Error generating stack: `+e.message+`
         font-size: 7px;
         font-weight: 500;
       }
+
+      .purchase-cost-panel {
+        border: 1px solid #446b52;
+        background:
+          linear-gradient(135deg, #66b97920, transparent 62%),
+          #0b1510;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 8px 16px;
+        margin-top: 10px;
+        padding: 10px 11px;
+        display: grid;
+        box-shadow: inset 3px 0 #69bf7d;
+      }
+
+      .purchase-cost-panel span,
+      .purchase-cost-panel small {
+        display: block;
+      }
+
+      .purchase-cost-panel span {
+        color: #8ed19d;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 8px;
+        font-weight: 750;
+      }
+
+      .purchase-cost-panel small {
+        color: var(--muted);
+        margin-top: 3px;
+        font-size: 8px;
+        line-height: 1.35;
+      }
+
+      .purchase-cost-panel strong {
+        color: #a8e3b5;
+        font-family: var(--font-geist-mono), Consolas, monospace;
+        white-space: nowrap;
+        font-size: 17px;
+      }
     </style>
       <!-- Автономная сборка: все данные, стили и скрипты встроены в этот файл. -->
   </head>
   <body>
     <div id="root"></div>
     <script src="./assets/research-images.js"></script>
+    <script src="./assets/purchase-costs.js"></script>
     <script>
       (() => {
         const ZOOM_THROTTLE_MS = 55;
@@ -271,9 +313,60 @@ Error generating stack: `+e.message+`
           card.appendChild(image);
         }
 
+        function updatePurchaseCost() {
+          const inspector = document.querySelector(".inspector");
+          const selectedCard = document.querySelector(
+            ".research-card.selected",
+          );
+          if (!inspector || !selectedCard) return;
+
+          const researchId = selectedCard.dataset.researchId;
+          const normalizedId = researchId?.toLocaleLowerCase("en");
+          const purchaseCost =
+            window.INDOMITUS_PURCHASE_COSTS?.[normalizedId || ""];
+          let panel = inspector.querySelector(".purchase-cost-panel");
+
+          if (purchaseCost === undefined) {
+            panel?.remove();
+            return;
+          }
+
+          if (!panel) {
+            panel = document.createElement("section");
+            panel.className = "purchase-cost-panel";
+            const idRow = inspector.querySelector(".id-row");
+            idRow?.insertAdjacentElement("afterend", panel);
+          }
+
+          const isEnglish = document.documentElement.lang === "en";
+          const priceKey = `${normalizedId}:${purchaseCost}:${isEnglish}`;
+          if (panel.dataset.priceKey === priceKey) return;
+          panel.dataset.priceKey = priceKey;
+
+          const label = document.createElement("span");
+          label.textContent = isEnglish
+            ? "Purchase after research"
+            : "Покупка после изучения";
+
+          const note = document.createElement("small");
+          note.textContent = isEnglish
+            ? "Cost of the complete squad or unit in game currency"
+            : "Стоимость полного отряда или единицы в игровой валюте";
+          label.appendChild(note);
+
+          const value = document.createElement("strong");
+          value.textContent = `${purchaseCost} MP`;
+
+          panel.replaceChildren(label, value);
+          panel.title = isEnglish
+            ? "Calculated from the conquest unit definitions in gamelogic.pak"
+            : "Рассчитано по определениям отрядов кампании из gamelogic.pak";
+        }
+
         function scan() {
           document.querySelectorAll(".tree-viewport").forEach(bindWheelZoom);
           document.querySelectorAll(".research-card").forEach(bindResearchImage);
+          updatePurchaseCost();
           updateHint();
         }
 
