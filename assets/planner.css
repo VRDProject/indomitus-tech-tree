@@ -620,6 +620,115 @@
   border-color: #4d835d;
 }
 
+.composition-armament {
+  border-top: 1px solid #2d393a;
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.armament-weapon > span,
+.armament-range > span,
+.armament-ammunition > span {
+  color: #7f8d89;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-size: 7px;
+  font-weight: 750;
+  display: block;
+}
+
+.armament-weapon > strong {
+  color: #e0c37e;
+  margin-top: 3px;
+  font-size: 9px;
+  line-height: 1.35;
+  display: block;
+}
+
+.armament-weapon > small {
+  color: #a7b1ae;
+  margin-top: 2px;
+  font-size: 8px;
+  line-height: 1.3;
+  display: block;
+}
+
+.armament-range {
+  background: #111a1b;
+  border: 1px solid #344244;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 3px 9px;
+  margin-top: 7px;
+  padding: 6px 7px;
+  display: grid;
+}
+
+.armament-range > strong {
+  color: #f1d18b;
+  font-family: var(--font-geist-mono), Consolas, monospace;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.armament-range > small {
+  color: #9b8177;
+  grid-column: 1 / -1;
+  font-size: 7px;
+  line-height: 1.35;
+}
+
+.armament-range.unavailable > strong {
+  color: #9b8177;
+}
+
+.armament-ammunition {
+  margin-top: 8px;
+}
+
+.armament-ammunition ul {
+  flex-direction: column;
+  gap: 3px;
+  margin: 5px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.armament-ammunition li {
+  background: #0d1516;
+  border-left: 2px solid #705d35;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 7px;
+  display: grid;
+}
+
+.armament-ammunition li strong,
+.armament-ammunition li small {
+  line-height: 1.3;
+  display: block;
+}
+
+.armament-ammunition li strong {
+  color: #cfd6d3;
+  font-size: 8px;
+}
+
+.armament-ammunition li small {
+  color: #899591;
+  margin-top: 2px;
+  font-size: 7px;
+}
+
+.armament-ammunition li b {
+  color: #efd08a;
+  font-family: var(--font-geist-mono), Consolas, monospace;
+  white-space: nowrap;
+  font-size: 9px;
+}
+
 .prerequisite-list .planner-dependency-cost {
   color: #f0cf88;
   font-family: var(--font-geist-mono), Consolas, monospace;

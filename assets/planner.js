@@ -2,7 +2,19 @@
   "use strict";
 
   const DATA = window.INDOMITUS_PLANNER_DATA;
+  let WEAPON_DATA = window.INDOMITUS_WEAPON_RANGES;
   if (!DATA?.nodes?.length) return;
+
+  if (!WEAPON_DATA) {
+    const script = document.createElement("script");
+    script.src = "./assets/weapon-ranges.js";
+    script.dataset.weaponRangesLoader = "true";
+    script.addEventListener("load", () => {
+      WEAPON_DATA = window.INDOMITUS_WEAPON_RANGES;
+      scheduleScan();
+    });
+    document.head.appendChild(script);
+  }
 
   const STORAGE_KEY = "indomitus-tech-tree-planner-v1";
   const INITIAL_PARAMS = new URLSearchParams(window.location.search);
@@ -191,6 +203,11 @@
           statusBlocked: "LOCKED",
           statusMissing: "MISSING DEP.",
           purchase: "Purchase",
+          mainArmament: "Main armament",
+          range: "Range",
+          ammunition: "Range by ammunition",
+          rangeUnavailable: "not specified numerically in the mod files",
+          meter: "m",
         }
       : {
           planning: "Режим «Планирование»",
@@ -238,6 +255,11 @@
           statusBlocked: "ЗАКРЫТО",
           statusMissing: "НЕТ ЗАВИС.",
           purchase: "Покупка",
+          mainArmament: "Основное вооружение",
+          range: "Дальность",
+          ammunition: "Дальность по типам боеприпасов",
+          rangeUnavailable: "числовое значение не указано в файлах мода",
+          meter: "м",
         };
   }
 
@@ -457,10 +479,12 @@
     }
     const copy = labels();
     const version = meta.querySelector(".site-version");
-    const versionKey = `${isEnglish()}:${DATA.dataVersion}:${DATA.modVersion}`;
+    const dataVersion =
+      WEAPON_DATA?.meta?.dataVersion || DATA.dataVersion;
+    const versionKey = `${isEnglish()}:${dataVersion}:${DATA.modVersion}`;
     const versionHtml = isEnglish()
-      ? `Data <strong>${escapeHtml(DATA.dataVersion)}</strong> · Mod <strong>v${escapeHtml(DATA.modVersion)}</strong>`
-      : `Данные <strong>${escapeHtml(DATA.dataVersion)}</strong> · Мод <strong>v${escapeHtml(DATA.modVersion)}</strong>`;
+      ? `Data <strong>${escapeHtml(dataVersion)}</strong> · Mod <strong>v${escapeHtml(DATA.modVersion)}</strong>`
+      : `Данные <strong>${escapeHtml(dataVersion)}</strong> · Мод <strong>v${escapeHtml(DATA.modVersion)}</strong>`;
     if (version.dataset.versionKey !== versionKey) {
       version.dataset.versionKey = versionKey;
       version.innerHTML = versionHtml;
@@ -705,8 +729,98 @@
 
     ensurePlannerSummary(inspector, node);
     ensureCopyActions(inspector, node);
+    ensureArmamentDetails(inspector, node);
     updateDependencyCosts(inspector, node);
     ensureUnlocks(inspector, node);
+  }
+
+  function weaponFor(node, itemId) {
+    return WEAPON_DATA?.units?.[
+      `${node.faction}:${normalize(itemId)}`
+    ];
+  }
+
+  function rangeLabel(range, copy) {
+    return Number.isFinite(range) ? `${range} ${copy.meter}` : "—";
+  }
+
+  function ensureArmamentDetails(inspector, node) {
+    const rows = inspector.querySelectorAll(".composition-list > div");
+    if (!rows.length) return;
+    const copy = labels();
+    const english = isEnglish();
+
+    rows.forEach((row) => {
+      const names = row.querySelector(".composition-names");
+      const code = names?.querySelector("code");
+      const itemId = code?.textContent?.trim();
+      if (!names || !code || !itemId) return;
+      const weapon = weaponFor(node, itemId);
+      let details = names.querySelector(":scope > .composition-armament");
+      if (!weapon) {
+        details?.remove();
+        return;
+      }
+      if (!details) {
+        details = document.createElement("div");
+        details.className = "composition-armament";
+        code.insertAdjacentElement("afterend", details);
+      }
+      const key = `${itemId}:${english}:${WEAPON_DATA.meta?.dataVersion}`;
+      if (details.dataset.armamentKey === key) return;
+      details.dataset.armamentKey = key;
+
+      const primaryName = english ? weapon.nameEn : weapon.nameRu;
+      const secondaryName = english ? weapon.nameRu : weapon.nameEn;
+      const showAmmunition =
+        weapon.gunLike && Array.isArray(weapon.ammunition) &&
+        weapon.ammunition.length > 0;
+      details.innerHTML = `
+        <div class="armament-weapon">
+          <span>${escapeHtml(copy.mainArmament)}</span>
+          <strong>${escapeHtml(primaryName)}</strong>
+          ${
+            secondaryName && secondaryName !== primaryName
+              ? `<small>${escapeHtml(secondaryName)}</small>`
+              : ""
+          }
+        </div>
+        <div class="armament-range${Number.isFinite(weapon.range) ? "" : " unavailable"}">
+          <span>${escapeHtml(copy.range)}</span>
+          <strong>${rangeLabel(weapon.range, copy)}</strong>
+          ${
+            Number.isFinite(weapon.range)
+              ? ""
+              : `<small>${escapeHtml(copy.rangeUnavailable)}</small>`
+          }
+        </div>
+        ${
+          showAmmunition
+            ? `<div class="armament-ammunition">
+                <span>${escapeHtml(copy.ammunition)}</span>
+                <ul>
+                  ${weapon.ammunition
+                    .map((ammo) => {
+                      const ammoName = english ? ammo.nameEn : ammo.nameRu;
+                      const otherName = english ? ammo.nameRu : ammo.nameEn;
+                      return `<li>
+                        <span>
+                          <strong>${escapeHtml(ammo.type)} · ${escapeHtml(ammoName)}</strong>
+                          ${
+                            otherName && otherName !== ammoName
+                              ? `<small>${escapeHtml(otherName)}</small>`
+                              : ""
+                          }
+                        </span>
+                        <b>${rangeLabel(ammo.range, copy)}</b>
+                      </li>`;
+                    })
+                    .join("")}
+                </ul>
+              </div>`
+            : ""
+        }`;
+    });
   }
 
   function ensurePlannerSummary(inspector, node) {
@@ -1218,13 +1332,30 @@
     if (purchase !== undefined) {
       lines.push(`${labels().purchase}: ${purchase} MP`);
     }
+    lines.push("", english ? "Composition:" : "Состав:");
+    for (const item of node.composition.items) {
+      lines.push(
+        `${item.count} × ${english ? item.nameEn : item.nameRu} [${item.id}]`,
+      );
+      const weapon = weaponFor(node, item.id);
+      if (!weapon) continue;
+      lines.push(
+        `  ${labels().mainArmament}: ${english ? weapon.nameEn : weapon.nameRu}`,
+        `  ${labels().range}: ${
+          Number.isFinite(weapon.range)
+            ? rangeLabel(weapon.range, labels())
+            : labels().rangeUnavailable
+        }`,
+      );
+      if (weapon.gunLike) {
+        for (const ammo of weapon.ammunition || []) {
+          lines.push(
+            `  - ${ammo.type} · ${english ? ammo.nameEn : ammo.nameRu}: ${rangeLabel(ammo.range, labels())}`,
+          );
+        }
+      }
+    }
     lines.push(
-      "",
-      english ? "Composition:" : "Состав:",
-      ...node.composition.items.map(
-        (item) =>
-          `${item.count} × ${english ? item.nameEn : item.nameRu} [${item.id}]`,
-      ),
       "",
       `${english ? "Requires" : "Требуется"}: ${node.requires.join(", ") || "—"}`,
       `${english ? "Unlocks" : "Открывает"}: ${directUnlocks.map((item) => item.id).join(", ") || "—"}`,

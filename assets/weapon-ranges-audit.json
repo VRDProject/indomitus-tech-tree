@@ -1,0 +1,478 @@
+{
+  "meta": {
+    "generatedAt": "2026-07-28T13:22:21.152Z",
+    "source": "gamelogic.pak + entity.pak + default/ru localization",
+    "researchNodes": 739,
+    "uniqueCompositionItems": 787,
+    "itemsWithWeapon": 752,
+    "itemsWithWeaponAndRange": 738,
+    "itemsWithoutWeaponOrRange": 49,
+    "weaponConfigsUsed": 126
+  },
+  "samples": {
+    "ig:ig_lasgun": {
+      "weaponId": "lasgun_no_bayonet",
+      "nameRu": "Лазвинтовка M36 обр. Кантраэля",
+      "nameEn": "Kantrael Pattern M36 Lasrifle",
+      "range": 100,
+      "gunLike": false,
+      "ammunition": [
+        {
+          "id": "lasgun",
+          "type": "LASGUN",
+          "nameRu": "Лазерная батарея [Красный луч]",
+          "nameEn": "Lasgun Battery [Red]",
+          "range": 100
+        }
+      ]
+    },
+    "ig:ig_kasrkin_plasmacannon": {
+      "weaponId": "ig_plasmacannon",
+      "nameRu": "Тяж. плазмаган обр. Аккатрана",
+      "nameEn": "Accatran Pattern Heavy Plasma Gun",
+      "range": 60,
+      "gunLike": true,
+      "ammunition": [
+        {
+          "id": "plasmacannon_cell",
+          "type": "PLASMACANNON_CELL",
+          "nameRu": "Капсула для плазма-пушки [Плазма]",
+          "nameEn": "Plasma Cannon Fuel Cell [Plasma]",
+          "range": 60
+        }
+      ]
+    },
+    "ig:lr_bc_lc_hb": {
+      "weaponId": "120mm_battlecannon",
+      "nameRu": "120-мм танковое орудие",
+      "nameEn": "120mm Battlecannon",
+      "range": 220,
+      "gunLike": true,
+      "ammunition": [
+        {
+          "id": "bulletig_120 aphe",
+          "type": "APHE",
+          "nameRu": "120-мм снаряд [Каморный ББ]",
+          "nameEn": "120mm Shell [APHE]",
+          "range": 220
+        },
+        {
+          "id": "bulletig_120 he",
+          "type": "HE",
+          "nameRu": "120-мм снаряд [ОФ]",
+          "nameEn": "120mm Shell [HE]",
+          "range": 220
+        },
+        {
+          "id": "bulletig_120 sm",
+          "type": "SM",
+          "nameRu": "120-мм снаряд [Дым]",
+          "nameEn": "120mm Shell [SMOKE]",
+          "range": 220
+        }
+      ]
+    },
+    "ig:ig_stand_autocannon": {
+      "weaponId": "ig_autocannon",
+      "nameRu": "40-мм автопушка",
+      "nameEn": "40mm Autocannon",
+      "range": 150,
+      "gunLike": true,
+      "ammunition": [
+        {
+          "id": "40mm_autocannon ap",
+          "type": "AP",
+          "nameRu": "40-мм снаряд для автопушки [ББ]",
+          "nameEn": "40mm Autocannon Shells [AP]",
+          "range": 150
+        },
+        {
+          "id": "40mm_autocannon he",
+          "type": "HE",
+          "nameRu": "40-мм снаряд для автопушки [ОФ]",
+          "nameEn": "40mm Autocannon Shells [HE]",
+          "range": 150
+        }
+      ]
+    },
+    "ig:macharius": {
+      "weaponId": "120mm_battlecannon_x2",
+      "nameRu": "120-мм спаренное танковое орудие",
+      "nameEn": "Twin-Linked 120mm Battlecannon",
+      "range": 220,
+      "gunLike": true,
+      "ammunition": [
+        {
+          "id": "bulletig_120 aphebc",
+          "type": "APHEBC",
+          "nameRu": "120-мм снаряд [Каморный ББ]",
+          "nameEn": "120mm Shell [APHEBC]",
+          "range": 220
+        },
+        {
+          "id": "bulletig_120 aphe",
+          "type": "APHE",
+          "nameRu": "120-мм снаряд [Каморный ББ]",
+          "nameEn": "120mm Shell [APHE]",
+          "range": 220
+        },
+        {
+          "id": "bulletig_120 he",
+          "type": "HE",
+          "nameRu": "120-мм снаряд [ОФ]",
+          "nameEn": "120mm Shell [HE]",
+          "range": 220
+        },
+        {
+          "id": "bulletig_120 sm",
+          "type": "SM",
+          "nameRu": "120-мм снаряд [Дым]",
+          "nameEn": "120mm Shell [SMOKE]",
+          "range": 220
+        }
+      ]
+    }
+  },
+  "missing": [
+    {
+      "key": "ig:cyclops",
+      "itemId": "cyclops",
+      "kind": "vehicle",
+      "weaponId": "weapon goliath",
+      "sourcePath": "../entity-defs/entity/[40k]vehicle/Imperial_guard/tank_light/cyclops/cyclops.def",
+      "reason": "weapon-config-not-found"
+    },
+    {
+      "key": "ig:ig_color_sgt",
+      "itemId": "ig_color_sgt",
+      "kind": "infantry",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:dk_color_sgt",
+      "itemId": "dk_color_sgt",
+      "kind": "infantry",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ely_color_sgt",
+      "itemId": "ely_color_sgt",
+      "kind": "infantry",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:sl_color_sgt",
+      "itemId": "sl_color_sgt",
+      "kind": "infantry",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ig_fueltruck",
+      "itemId": "ig_fueltruck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ig_ammo_crate",
+      "itemId": "ig_ammo_crate",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ammo_trailer_ig",
+      "itemId": "ammo_trailer_ig",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ig_ammotruck",
+      "itemId": "ig_ammotruck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ig_truck",
+      "itemId": "ig_truck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:taurox",
+      "itemId": "taurox",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ig_mortar",
+      "itemId": "ig_mortar",
+      "kind": "vehicle",
+      "weaponId": "weapon 100mm_mortar",
+      "sourcePath": "../entity-defs/entity/[40k]vehicle/Imperial_guard/cannon/ig_mortar/ig_mortar.def",
+      "configPath": "../gamelogic-full/set/stuff/mortar/100mm_mortar.weapon",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "ig:dk_ammo_crate",
+      "itemId": "dk_ammo_crate",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ammo_trailer_dk",
+      "itemId": "ammo_trailer_dk",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:dk_ammotruck",
+      "itemId": "dk_ammotruck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:dk_fueltruck",
+      "itemId": "dk_fueltruck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:dk_truck",
+      "itemId": "dk_truck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:dk_mortar",
+      "itemId": "dk_mortar",
+      "kind": "vehicle",
+      "weaponId": "weapon 100mm_mortar",
+      "sourcePath": "../entity-defs/entity/[40k]vehicle/Imperial_guard/cannon/ig_mortar/dk_mortar.def",
+      "configPath": "../gamelogic-full/set/stuff/mortar/100mm_mortar.weapon",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "ig:ely_ammo_crate",
+      "itemId": "ely_ammo_crate",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ely_truck",
+      "itemId": "ely_truck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ely_mortar",
+      "itemId": "ely_mortar",
+      "kind": "vehicle",
+      "weaponId": "weapon 100mm_mortar",
+      "sourcePath": "../entity-defs/entity/[40k]vehicle/Imperial_guard/cannon/ig_mortar/ely_mortar.def",
+      "configPath": "../gamelogic-full/set/stuff/mortar/100mm_mortar.weapon",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "ig:ely_cyclops",
+      "itemId": "ely_cyclops",
+      "kind": "vehicle",
+      "weaponId": "weapon goliath",
+      "sourcePath": "../entity-defs/entity/[40k]vehicle/Imperial_guard/tank_light/cyclops/ely_cyclops.def",
+      "reason": "weapon-config-not-found"
+    },
+    {
+      "key": "ig:sl_ammo_crate",
+      "itemId": "sl_ammo_crate",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:ammo_trailer_sl",
+      "itemId": "ammo_trailer_sl",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:sl_fueltruck",
+      "itemId": "sl_fueltruck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "ig:sl_mortar",
+      "itemId": "sl_mortar",
+      "kind": "vehicle",
+      "weaponId": "weapon 100mm_mortar",
+      "sourcePath": "../entity-defs/entity/[40k]vehicle/Imperial_guard/cannon/ig_mortar/sl_mortar.def",
+      "configPath": "../gamelogic-full/set/stuff/mortar/100mm_mortar.weapon",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "tg:bp_crewcommander",
+      "itemId": "bp_crewcommander",
+      "kind": "crew",
+      "weaponId": "tg_autopistol",
+      "sourcePath": "../gamelogic-full/set/breed/mp/tg/warhammer/bp_crewcommander.set",
+      "configPath": "../gamelogic-full/set/stuff/smg/tg_autopistol",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "tg:bp_crewman",
+      "itemId": "bp_crewman",
+      "kind": "crew",
+      "weaponId": "tg_autopistol",
+      "sourcePath": "../gamelogic-full/set/breed/mp/tg/warhammer/bp_crewman.set",
+      "configPath": "../gamelogic-full/set/stuff/smg/tg_autopistol",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "tg:dg_crewcommander",
+      "itemId": "dg_crewcommander",
+      "kind": "crew",
+      "weaponId": "tg_autopistol",
+      "sourcePath": "../gamelogic-full/set/breed/mp/tg/warhammer/dg_crewcommander.set",
+      "configPath": "../gamelogic-full/set/stuff/smg/tg_autopistol",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "tg:dg_crewman",
+      "itemId": "dg_crewman",
+      "kind": "crew",
+      "weaponId": "tg_autopistol",
+      "sourcePath": "../gamelogic-full/set/breed/mp/tg/warhammer/dg_crewman.set",
+      "configPath": "../gamelogic-full/set/stuff/smg/tg_autopistol",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "tg:bp_color_sgt",
+      "itemId": "bp_color_sgt",
+      "kind": "infantry",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:dg_color_sgt",
+      "itemId": "dg_color_sgt",
+      "kind": "infantry",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:bp_cultist4",
+      "itemId": "bp_cultist4",
+      "kind": "infantry",
+      "weaponId": "tg_autopistol",
+      "sourcePath": "../gamelogic-full/set/breed/mp/tg/warhammer/bp_cultist4.set",
+      "configPath": "../gamelogic-full/set/stuff/smg/tg_autopistol",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "tg:bp_militia_autopistol",
+      "itemId": "bp_militia_autopistol",
+      "kind": "infantry",
+      "weaponId": "tg_autopistol",
+      "sourcePath": "../gamelogic-full/set/breed/mp/tg/warhammer/bp_militia_autopistol.set",
+      "configPath": "../gamelogic-full/set/stuff/smg/tg_autopistol",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "tg:dg_cultist4",
+      "itemId": "dg_cultist4",
+      "kind": "infantry",
+      "weaponId": "tg_autopistol",
+      "sourcePath": "../gamelogic-full/set/breed/mp/tg/warhammer/dg_cultist4.set",
+      "configPath": "../gamelogic-full/set/stuff/smg/tg_autopistol",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "tg:dg_militia_autopistol",
+      "itemId": "dg_militia_autopistol",
+      "kind": "infantry",
+      "weaponId": "tg_autopistol",
+      "sourcePath": "../gamelogic-full/set/breed/mp/tg/warhammer/dg_militia_autopistol.set",
+      "configPath": "../gamelogic-full/set/stuff/smg/tg_autopistol",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "tg:dg_taurox",
+      "itemId": "dg_taurox",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:inf_crate_bp",
+      "itemId": "inf_crate_bp",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:ammo_trailer_bp",
+      "itemId": "ammo_trailer_bp",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:bp_ammotruck",
+      "itemId": "bp_ammotruck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:bp_truck",
+      "itemId": "bp_truck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:bp_fueltruck",
+      "itemId": "bp_fueltruck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:bp_mortar",
+      "itemId": "bp_mortar",
+      "kind": "vehicle",
+      "weaponId": "weapon 100mm_mortar",
+      "sourcePath": "../entity-defs/entity/[40k]vehicle/Traitor_guard/bloodpact/cannon/BP_mortar/BP_mortar.def",
+      "configPath": "../gamelogic-full/set/stuff/mortar/100mm_mortar.weapon",
+      "reason": "range-not-found"
+    },
+    {
+      "key": "tg:inf_crate_dg",
+      "itemId": "inf_crate_dg",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:ammo_trailer_dg",
+      "itemId": "ammo_trailer_dg",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:dg_ammotruck",
+      "itemId": "dg_ammotruck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:dg_truck",
+      "itemId": "dg_truck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:dg_fueltruck",
+      "itemId": "dg_fueltruck",
+      "kind": "vehicle",
+      "reason": "no-primary-weapon"
+    },
+    {
+      "key": "tg:dg_mortar",
+      "itemId": "dg_mortar",
+      "kind": "vehicle",
+      "weaponId": "weapon 100mm_mortar",
+      "sourcePath": "../entity-defs/entity/[40k]vehicle/Traitor_guard/deathguard/cannon/DG_mortar/DG_mortar.def",
+      "configPath": "../gamelogic-full/set/stuff/mortar/100mm_mortar.weapon",
+      "reason": "range-not-found"
+    }
+  ]
+}
