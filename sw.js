@@ -1,4 +1,4 @@
-const CACHE_NAME = "indomitus-tree-2026-07-28-1";
+const CACHE_NAME = "indomitus-tree-2026-07-28-2";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -7,6 +7,7 @@ const APP_SHELL = [
   "./assets/planner-data.js",
   "./assets/planner.js",
   "./assets/purchase-costs.js",
+  "./assets/weapon-ranges.js",
   "./assets/research-images.js",
   "./assets/app-icon-192.png",
   "./assets/app-icon-512.png",
