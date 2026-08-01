@@ -21,6 +21,28 @@ const sourceModule = await import(
 );
 const source = sourceModule.t;
 
+const nameCorrections = {
+  prog_ancil_doctrine: ["Вспомогательная доктрина", "Ancillary Doctrine"],
+  "squad_tanith_lasgun(ig)": ["(1) Пехотный отряд Танита", "(1) Tanith Infantry Squad"],
+  "squad_tanith_support(ig)": ["(1) Отряд поддержки Танита", "(1) Tanith Support Squad"],
+  "squad_tanith_scout(ig)": ["(1) Разведывательный отряд Танита", "(1) Tanith Scout Squad"],
+  "squad_storm_mech(ig)": ["(1) Механизированный отряд штурмовиков", "(1) Mechanized Storm Trooper Squad"],
+  "squad_dk_gorgon(ig)": ["(1) Штурмовой взвод «Горгона»", "(1) Gorgon Assault Platoon"],
+  prog_daemon_summoning: ["Ритуалы призыва демонов", "Daemonic Summoning Rituals"],
+  bp_fueltruck: ["Топливозаправщик Кровавого договора", "Blood Pattern Fuel Truck"],
+  bp_stand_missilelauncher: ["Ракетная установка образца «Восс» (ПТУР)", "Voss Pattern (HKM) Missile Launcher"],
+  dg_fueltruck: ["Топливозаправщик сил Нургла", "Rot Pattern Fuel Truck"],
+  dg_stand_missilelauncher: ["Ракетная установка образца «Восс» (ПТУР)", "Voss Pattern (HKM) Missile Launcher"],
+  bp_sentinel_hb: ["«Часовой» (ТБ)", "Sentinel (HB)"],
+  bp_sentinel_hb_rl: ["«Часовой» (ТБ/НУРС)", "Sentinel (HB/RL)"],
+  dg_salamander_toxflamer: ["«Саламандра» (ТОКС)", "Salamander (TOX)"],
+};
+const externalRootRequirements = new Set([
+  "single_pdf_officer(ig)",
+  "single_bp_militia_officer(tg)",
+  "single_dg_militia_officer(tg)",
+]);
+
 if (!source?.nodes?.length) {
   throw new Error(`Research data was not found in ${sourcePath}`);
 }
@@ -35,15 +57,17 @@ const plannerData = {
     id: node.id,
     faction: node.faction,
     tech: node.tech,
-    requires: node.requires,
+    requires: node.requires.filter(
+      (requirement) => !externalRootRequirements.has(requirement),
+    ),
     cost: node.cost,
     x: node.x,
     y: node.y,
     section: node.section,
     sectionRu: node.sectionRu,
     sectionEn: node.sectionEn,
-    nameRu: node.nameRu,
-    nameEn: node.nameEn,
+    nameRu: nameCorrections[node.id]?.[0] || node.nameRu,
+    nameEn: nameCorrections[node.id]?.[1] || node.nameEn,
     composition: {
       vehicles: node.composition.vehicles,
       infantry: node.composition.infantry,
