@@ -923,6 +923,20 @@
   outline-offset: 2px;
 }
 
+[data-planner-hidden] {
+  display: none !important;
+}
+
+.inspector-section[data-planner-empty-note]::after {
+  content: attr(data-planner-empty-note);
+  border: 1px dashed var(--line-strong);
+  color: var(--muted);
+  padding: 11px;
+  font-size: 10.5px;
+  line-height: 1.45;
+  display: block;
+}
+
 .language-switch button,
 .view-switch button,
 .site-meta-actions a,
@@ -1125,6 +1139,15 @@
   font-size: 11px;
 }
 
+.inspector-cost small,
+.inspector-cost em {
+  font-size: 10px;
+}
+
+.inspector-cost strong {
+  font-size: 15px;
+}
+
 .id-row button {
   min-height: 32px;
   padding-inline: 8px;
@@ -1242,7 +1265,14 @@
 }
 
 .planner-image-dialog h2 {
+  margin-right: 52px;
   font-size: 18px;
+}
+
+.planner-image-dialog {
+  box-sizing: border-box;
+  width: min(360px, 100%);
+  min-width: 0;
 }
 
 .planner-image-dialog button {
