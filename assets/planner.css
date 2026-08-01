@@ -927,6 +927,19 @@
   display: none !important;
 }
 
+[data-planner-text] {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  letter-spacing: 0 !important;
+}
+
+[data-planner-text]::after {
+  content: attr(data-planner-text);
+  font-size: var(--planner-text-size, 1rem);
+  line-height: var(--planner-text-line-height, normal);
+  letter-spacing: var(--planner-text-letter-spacing, normal);
+}
+
 .inspector-section[data-planner-empty-note]::after {
   content: attr(data-planner-empty-note);
   border: 1px dashed var(--line-strong);
