@@ -1,0 +1,3604 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-01T12:15:50.222Z",
+    "source": "entity.pak + gamelogic.pak",
+    "presentation": "static bind geometry with simplified materials",
+    "researchNodes": 739,
+    "uniqueCompositionItems": 787,
+    "resolvedItems": 787,
+    "itemsWithWebModel": 787,
+    "uniqueSourceModels": 398,
+    "convertedModels": 398,
+    "failedModels": 0,
+    "outputBytes": 157483332,
+    "outputMiB": 150.19,
+    "modelParts": 9114,
+    "uniqueMeshes": 8031
+  },
+  "missing": [],
+  "failedModels": [],
+  "models": [
+    {
+      "source": "humanskin/imperial_guard/assassin/assassin.mdl",
+      "output": "assassin-1u4c0qi.glb",
+      "kind": "infantry",
+      "bytes": 40260,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/eversor/eversor_assassin.mdl",
+      "output": "eversor_assassin-15ewq9s.glb",
+      "kind": "infantry",
+      "bytes": 120900,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/tech_priest2/tech_priest2.mdl",
+      "output": "tech_priest2-0igmyp4.glb",
+      "kind": "infantry",
+      "bytes": 424116,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/tech_priest1/tech_priest1.mdl",
+      "output": "tech_priest1-08w2d86.glb",
+      "kind": "infantry",
+      "bytes": 424116,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/cadian37th/cadian_1/cadian_1.mdl",
+      "output": "cadian_1-17ciigk.glb",
+      "kind": "infantry",
+      "bytes": 77172,
+      "parts": 1,
+      "unitCount": 25,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/cadian37th/cadian_vet_2/cadian_vet_2.mdl",
+      "output": "cadian_vet_2-1f61igm.glb",
+      "kind": "infantry",
+      "bytes": 314168,
+      "parts": 1,
+      "unitCount": 15,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/stormtrooper_1/stormtrooper_1.mdl",
+      "output": "stormtrooper_1-1v0kuoo.glb",
+      "kind": "infantry",
+      "bytes": 100404,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/cadian37th/cadian_kasrkin/cadian_kasrkin.mdl",
+      "output": "cadian_kasrkin-0tw1cfc.glb",
+      "kind": "infantry",
+      "bytes": 323804,
+      "parts": 1,
+      "unitCount": 6,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/cadian37th/cadian_vet_1/cadian_vet_1.mdl",
+      "output": "cadian_vet_1-0n6wlig.glb",
+      "kind": "infantry",
+      "bytes": 295816,
+      "parts": 1,
+      "unitCount": 15,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/stormtrooper_2/stormtrooper_2.mdl",
+      "output": "stormtrooper_2-163jzne.glb",
+      "kind": "infantry",
+      "bytes": 90516,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/cadian37th/cadian_medic/cadian_medic.mdl",
+      "output": "cadian_medic-1reiprq.glb",
+      "kind": "infantry",
+      "bytes": 165552,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/commissar/commissar.mdl",
+      "output": "commissar-1bom51a.glb",
+      "kind": "infantry",
+      "bytes": 194800,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/ig_psyker/ig_psyker.mdl",
+      "output": "ig_psyker-1ls4j4a.glb",
+      "kind": "vehicle",
+      "bytes": 183404,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/cadian37th/cadian_tanker/cadian_tanker.mdl",
+      "output": "cadian_tanker-0kdnqdi.glb",
+      "kind": "infantry",
+      "bytes": 186192,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/cadian37th/cadian_sarge/cadian_sarge.mdl",
+      "output": "cadian_sarge-0fa8rba.glb",
+      "kind": "infantry",
+      "bytes": 281240,
+      "parts": 1,
+      "unitCount": 10,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_veteran/deathkorp_veteran.mdl",
+      "output": "deathkorp_veteran-0v5hxty.glb",
+      "kind": "infantry",
+      "bytes": 182788,
+      "parts": 1,
+      "unitCount": 7,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_ranker_1/deathkorp_ranker_1.mdl",
+      "output": "deathkorp_ranker_1-0379qus.glb",
+      "kind": "infantry",
+      "bytes": 165800,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_tanker/deathkorp_tanker.mdl",
+      "output": "deathkorp_tanker-1otbha8.glb",
+      "kind": "infantry",
+      "bytes": 59052,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_quartermaster/deathkorp_quartermaster.mdl",
+      "output": "deathkorp_quartermaster-1b2mrsm.glb",
+      "kind": "infantry",
+      "bytes": 69580,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_commissar/deathkorp_commissar.mdl",
+      "output": "deathkorp_commissar-09d22ba.glb",
+      "kind": "infantry",
+      "bytes": 58604,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_psyker/deathkorp_psyker.mdl",
+      "output": "deathkorp_psyker-10dg626.glb",
+      "kind": "infantry",
+      "bytes": 127256,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_engineer/deathkorp_engineer.mdl",
+      "output": "deathkorp_engineer-1yjmkqc.glb",
+      "kind": "infantry",
+      "bytes": 199380,
+      "parts": 1,
+      "unitCount": 7,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/cyclops/cyclops.mdl",
+      "output": "cyclops-1lj6y2b.glb",
+      "kind": "vehicle",
+      "bytes": 32220,
+      "parts": 6,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_ranker_2/deathkorp_ranker_2.mdl",
+      "output": "deathkorp_ranker_2-1jsm25y.glb",
+      "kind": "infantry",
+      "bytes": 60584,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_2_pdf/elysian_2.mdl",
+      "output": "elysian_2-0awgpa3.glb",
+      "kind": "infantry",
+      "bytes": 114596,
+      "parts": 1,
+      "unitCount": 5,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_3_pdf/elysian_3.mdl",
+      "output": "elysian_3-0oxusen.glb",
+      "kind": "infantry",
+      "bytes": 114596,
+      "parts": 1,
+      "unitCount": 12,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_4/elysian_4.mdl",
+      "output": "elysian_4-1h400gm.glb",
+      "kind": "infantry",
+      "bytes": 120168,
+      "parts": 1,
+      "unitCount": 6,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_5/elysian_5.mdl",
+      "output": "elysian_5-1a1f1du.glb",
+      "kind": "infantry",
+      "bytes": 120572,
+      "parts": 1,
+      "unitCount": 8,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_1_pdf/elysian_1.mdl",
+      "output": "elysian_1-1xnhaiz.glb",
+      "kind": "infantry",
+      "bytes": 102720,
+      "parts": 1,
+      "unitCount": 8,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_capt/elysian_elite_1.mdl",
+      "output": "elysian_elite_1-07i8uwl.glb",
+      "kind": "infantry",
+      "bytes": 127156,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_elite_4/elysian_elite_4.mdl",
+      "output": "elysian_elite_4-19hanp2.glb",
+      "kind": "infantry",
+      "bytes": 132436,
+      "parts": 1,
+      "unitCount": 7,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_elite_3/elysian_elite_3.mdl",
+      "output": "elysian_elite_3-05z3hla.glb",
+      "kind": "infantry",
+      "bytes": 114256,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_tanker/elysian_tanker.mdl",
+      "output": "elysian_tanker-1u2gq5u.glb",
+      "kind": "infantry",
+      "bytes": 84536,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_1/steel_legion_1.mdl",
+      "output": "steel_legion_1-1x8opwd.glb",
+      "kind": "infantry",
+      "bytes": 140016,
+      "parts": 1,
+      "unitCount": 10,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_vet_1/steel_legion_vet_1.mdl",
+      "output": "steel_legion_vet_1-0p0qy21.glb",
+      "kind": "infantry",
+      "bytes": 241288,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_3/steel_legion_3.mdl",
+      "output": "steel_legion_3-1ozggrt.glb",
+      "kind": "infantry",
+      "bytes": 135244,
+      "parts": 1,
+      "unitCount": 7,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_vet_4/steel_legion_vet_4.mdl",
+      "output": "steel_legion_vet_4-0tl9par.glb",
+      "kind": "infantry",
+      "bytes": 212124,
+      "parts": 1,
+      "unitCount": 7,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_vet_2/steel_legion_vet_2.mdl",
+      "output": "steel_legion_vet_2-0h3hqqb.glb",
+      "kind": "infantry",
+      "bytes": 238572,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_2/steel_legion_2.mdl",
+      "output": "steel_legion_2-06o74bn.glb",
+      "kind": "infantry",
+      "bytes": 142364,
+      "parts": 1,
+      "unitCount": 10,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_commissar/steel_legion_commissar.mdl",
+      "output": "steel_legion_commissar-0cfnxpn.glb",
+      "kind": "infantry",
+      "bytes": 144392,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/pdf/pdf_1/pdf_1.mdl",
+      "output": "pdf_1-15myscw.glb",
+      "kind": "infantry",
+      "bytes": 77172,
+      "parts": 1,
+      "unitCount": 8,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/pdf/pdf_medic/pdf_1.mdl",
+      "output": "pdf_1-0zrg6b5.glb",
+      "kind": "infantry",
+      "bytes": 77172,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/pdf/pdf_sgt/pdf_sgt.mdl",
+      "output": "pdf_sgt-1mawx4w.glb",
+      "kind": "infantry",
+      "bytes": 281236,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/tanith/tanith_vet1/tanith_vet1.mdl",
+      "output": "tanith_vet1-0ccqcov.glb",
+      "kind": "infantry",
+      "bytes": 223868,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/tanith/tanith1/tanith1.mdl",
+      "output": "tanith1-1ee3shz.glb",
+      "kind": "infantry",
+      "bytes": 78804,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/tanith/tanith3/tanith3.mdl",
+      "output": "tanith3-1nfv5nn.glb",
+      "kind": "infantry",
+      "bytes": 203140,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/tanith/tanith_vet2/tanith_vet2.mdl",
+      "output": "tanith_vet2-0i3vxtr.glb",
+      "kind": "infantry",
+      "bytes": 189772,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/tanith/tanith_vet3/tanith_vet3.mdl",
+      "output": "tanith_vet3-16anjiz.glb",
+      "kind": "infantry",
+      "bytes": 153968,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/tanith/tanith5/tanith5.mdl",
+      "output": "tanith5-15d1qlr.glb",
+      "kind": "infantry",
+      "bytes": 93504,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/tanith/tanith4/tanith4.mdl",
+      "output": "tanith4-0xvlpnb.glb",
+      "kind": "infantry",
+      "bytes": 81956,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/heavy_inf/ogryn1/ogryn1.mdl",
+      "output": "ogryn1-0fae8yv.glb",
+      "kind": "vehicle",
+      "bytes": 65000,
+      "parts": 10,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/heavy_inf/ogryn2/ogryn2.mdl",
+      "output": "ogryn2-0x5j481.glb",
+      "kind": "vehicle",
+      "bytes": 46564,
+      "parts": 8,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/heavy_inf/ogryn3/ogryn3.mdl",
+      "output": "ogryn3-1uvm0yj.glb",
+      "kind": "vehicle",
+      "bytes": 60584,
+      "parts": 10,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/heavy_inf/ogryn4/ogryn4.mdl",
+      "output": "ogryn4-0nb9he9.glb",
+      "kind": "vehicle",
+      "bytes": 73800,
+      "parts": 10,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/cadian37th/cadian_captain/cadian_captain.mdl",
+      "output": "cadian_captain-1f0ouiy.glb",
+      "kind": "infantry",
+      "bytes": 233004,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_cmd.mdl",
+      "output": "chimera_cmd-1t7025w.glb",
+      "kind": "vehicle",
+      "bytes": 354184,
+      "parts": 28,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/cadian37th/cadian_creed/cadian_creed.mdl",
+      "output": "cadian_creed-1wy98xw.glb",
+      "kind": "infantry",
+      "bytes": 120684,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/cadian/cadian37th/cadian_kasrkin_sarge/cadian_kasrkin_sarge.mdl",
+      "output": "cadian_kasrkin_sarge-0lpvs7e.glb",
+      "kind": "infantry",
+      "bytes": 412432,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]inventory/-weapon/-rifle/ig_autogun/ig_autogun.mdl",
+      "output": "ig_autogun-011fnq7.glb",
+      "kind": "vehicle",
+      "bytes": 41864,
+      "parts": 3,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]inventory/-weapon/-mgun/ig_heavystubber/ig_heavystubber.mdl",
+      "output": "ig_heavystubber-0hh1sg0.glb",
+      "kind": "vehicle",
+      "bytes": 54736,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/airborne/ig_valkyrie/ig_valkyrie.mdl",
+      "output": "ig_valkyrie-1kw92yy.glb",
+      "kind": "vehicle",
+      "bytes": 287208,
+      "parts": 9,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/stormtrooper_4/stormtrooper_4.mdl",
+      "output": "stormtrooper_4-1bshetm.glb",
+      "kind": "infantry",
+      "bytes": 90420,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/stormtrooper_3/stormtrooper_3.mdl",
+      "output": "stormtrooper_3-115m6bg.glb",
+      "kind": "infantry",
+      "bytes": 93364,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/taurox/taurox_ac.mdl",
+      "output": "taurox_ac-0taolii.glb",
+      "kind": "vehicle",
+      "bytes": 1503996,
+      "parts": 11,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_officer/deathkorp_officer.mdl",
+      "output": "deathkorp_officer-1wsu62e.glb",
+      "kind": "infantry",
+      "bytes": 145932,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_watchmaster/deathkorp_watchmaster.mdl",
+      "output": "deathkorp_watchmaster-1cuui4y.glb",
+      "kind": "infantry",
+      "bytes": 184576,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_colonel/deathkorp_colonel.mdl",
+      "output": "deathkorp_colonel-0ihripy.glb",
+      "kind": "infantry",
+      "bytes": 73580,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Salamander/salamander_unarmed.mdl",
+      "output": "salamander_unarmed-1d65pd4.glb",
+      "kind": "vehicle",
+      "bytes": 441152,
+      "parts": 34,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_grenadier_cable/deathkorp_grenadier_cable.mdl",
+      "output": "deathkorp_grenadier_cable-14g6xfm.glb",
+      "kind": "infantry",
+      "bytes": 186208,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_grenadier_watchmaster_cable/deathkorp_grenadier_watchmaster_cable.mdl",
+      "output": "deathkorp_grenadier_watchmaster_cable-0a927te.glb",
+      "kind": "infantry",
+      "bytes": 213404,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_honorguard/deathkorp_honorguard.mdl",
+      "output": "deathkorp_honorguard-19amb5s.glb",
+      "kind": "infantry",
+      "bytes": 126408,
+      "parts": 1,
+      "unitCount": 6,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]inventory/-weapon/-rifle/dk_lasgun/dk_lasgun.mdl",
+      "output": "dk_lasgun-0je6dol.glb",
+      "kind": "vehicle",
+      "bytes": 39148,
+      "parts": 2,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]inventory/-weapon/-mgun/dk_autocannon/dk_autocannon.mdl",
+      "output": "dk_autocannon-0ghs3tw.glb",
+      "kind": "vehicle",
+      "bytes": 62032,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/gorgon/gorgon.mdl",
+      "output": "gorgon-0vvzgii.glb",
+      "kind": "vehicle",
+      "bytes": 807548,
+      "parts": 20,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/death_korp/deathkorp_grenadier/deathkorp_grenadier.mdl",
+      "output": "deathkorp_grenadier-1oqsuk2.glb",
+      "kind": "infantry",
+      "bytes": 184372,
+      "parts": 1,
+      "unitCount": 5,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_lt/elysian_2.mdl",
+      "output": "elysian_2-1w67dxs.glb",
+      "kind": "infantry",
+      "bytes": 114596,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/elysian/elysian_elite_2/elysian_elite_2.mdl",
+      "output": "elysian_elite_2-02ydgnu.glb",
+      "kind": "infantry",
+      "bytes": 121828,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_colonel/steel_legion_colonel.mdl",
+      "output": "steel_legion_colonel-1oi5a8n.glb",
+      "kind": "infantry",
+      "bytes": 149144,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Salamander/salamander_unarmed_transport.mdl",
+      "output": "salamander_unarmed_transport-07bxvxm.glb",
+      "kind": "vehicle",
+      "bytes": 363348,
+      "parts": 27,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_vet_3/steel_legion_vet_3.mdl",
+      "output": "steel_legion_vet_3-1w01msd.glb",
+      "kind": "infantry",
+      "bytes": 240368,
+      "parts": 1,
+      "unitCount": 6,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_colonel_red_holster/steel_legion_colonel_red_holster.mdl",
+      "output": "steel_legion_colonel_red_holster-1mi7hjj.glb",
+      "kind": "infantry",
+      "bytes": 147704,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_pintle.mdl",
+      "output": "chimera_pintle-1czyn9k.glb",
+      "kind": "vehicle",
+      "bytes": 354128,
+      "parts": 27,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/imperial_guard/steel_legion/steel_legion_sarge/steel_legion_sarge.mdl",
+      "output": "steel_legion_sarge-0jbbnkb.glb",
+      "kind": "infantry",
+      "bytes": 149640,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_hkm.mdl",
+      "output": "chimera_hkm-16i5q30.glb",
+      "kind": "vehicle",
+      "bytes": 408828,
+      "parts": 31,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_ac_pintle.mdl",
+      "output": "chimera_ac_pintle-1cyl1rv.glb",
+      "kind": "vehicle",
+      "bytes": 302448,
+      "parts": 24,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_lc_pintle.mdl",
+      "output": "chimera_lc_pintle-17hnymk.glb",
+      "kind": "vehicle",
+      "bytes": 341624,
+      "parts": 21,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_hkm_pintle.mdl",
+      "output": "chimera_hkm_pintle-10ochcd.glb",
+      "kind": "vehicle",
+      "bytes": 474740,
+      "parts": 34,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/ig_fueltruck/ig_fueltruck.mdl",
+      "output": "ig_fueltruck-13as3ua.glb",
+      "kind": "vehicle",
+      "bytes": 794024,
+      "parts": 38,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/trojan/trojan.mdl",
+      "output": "trojan-1hxiso1.glb",
+      "kind": "vehicle",
+      "bytes": 236276,
+      "parts": 10,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/special/ig_ammo_crate/ig_ammo_crate.mdl",
+      "output": "ig_ammo_crate-12uaqu9.glb",
+      "kind": "vehicle",
+      "bytes": 39240,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/special/ammo_trailer_ig/ammo_trailer.mdl",
+      "output": "ammo_trailer-171tb2q.glb",
+      "kind": "vehicle",
+      "bytes": 173712,
+      "parts": 11,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/ig_ammotruck/ig_ammotruck.mdl",
+      "output": "ig_ammotruck-0axoypy.glb",
+      "kind": "vehicle",
+      "bytes": 1009816,
+      "parts": 41,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/ig_ammotruck/ig_ammotruck_pintle.mdl",
+      "output": "ig_ammotruck_pintle-0ywymxn.glb",
+      "kind": "vehicle",
+      "bytes": 1026872,
+      "parts": 43,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Salamander/salamander_supply.mdl",
+      "output": "salamander_supply-1lxt80b.glb",
+      "kind": "vehicle",
+      "bytes": 486732,
+      "parts": 24,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/ig_ammotruck/ig_truck.mdl",
+      "output": "ig_truck-1nucyfs.glb",
+      "kind": "vehicle",
+      "bytes": 1033776,
+      "parts": 37,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/ig_ammotruck/ig_truck_pintle.mdl",
+      "output": "ig_truck_pintle-1inhd3d.glb",
+      "kind": "vehicle",
+      "bytes": 1050832,
+      "parts": 39,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/taurox/taurox.mdl",
+      "output": "taurox-0xqufbr.glb",
+      "kind": "vehicle",
+      "bytes": 1370928,
+      "parts": 6,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Salamander/salamander_ac.mdl",
+      "output": "salamander_ac-0mkgrk8.glb",
+      "kind": "vehicle",
+      "bytes": 456240,
+      "parts": 44,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ig_emplacement/stand_lascannon.mdl",
+      "output": "stand_lascannon-038qirn.glb",
+      "kind": "vehicle",
+      "bytes": 354552,
+      "parts": 4,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ig_emplacement/stand_heavybolter.mdl",
+      "output": "stand_heavybolter-1cjito5.glb",
+      "kind": "vehicle",
+      "bytes": 470464,
+      "parts": 6,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ig_emplacement/stand_autocannon.mdl",
+      "output": "stand_autocannon-0cuwh22.glb",
+      "kind": "vehicle",
+      "bytes": 520960,
+      "parts": 6,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ig_100mm_atgun/ig_100mm_atgun.mdl",
+      "output": "ig_100mm_atgun-0c6zruj.glb",
+      "kind": "vehicle",
+      "bytes": 659840,
+      "parts": 19,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ig_heavy_lascannon/ig_heavy_lascannon.mdl",
+      "output": "ig_heavy_lascannon-0bdba5r.glb",
+      "kind": "vehicle",
+      "bytes": 699908,
+      "parts": 24,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ig_mortar/ig_mortar.mdl",
+      "output": "ig_mortar-19n941l.glb",
+      "kind": "vehicle",
+      "bytes": 72952,
+      "parts": 4,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ig_Howitzer/IG_Howitzer.mdl",
+      "output": "ig_howitzer-0iw8yst.glb",
+      "kind": "vehicle",
+      "bytes": 751988,
+      "parts": 25,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Griffon/griffon.mdl",
+      "output": "griffon-1rdnwx7.glb",
+      "kind": "vehicle",
+      "bytes": 129092,
+      "parts": 17,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Basilisk/Basilisk.mdl",
+      "output": "basilisk-1lhm1u9.glb",
+      "kind": "vehicle",
+      "bytes": 590964,
+      "parts": 9,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Manticore/Manticore.mdl",
+      "output": "manticore-077tw03.glb",
+      "kind": "vehicle",
+      "bytes": 190252,
+      "parts": 11,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Manticore/Deathstrike.mdl",
+      "output": "deathstrike-0eza34f.glb",
+      "kind": "vehicle",
+      "bytes": 157772,
+      "parts": 12,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ_ryza/LR_DC_HB.mdl",
+      "output": "lr_dc_hb-1b9wqxl.glb",
+      "kind": "vehicle",
+      "bytes": 287016,
+      "parts": 21,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_DC_HB_HB.mdl",
+      "output": "lr_dc_hb_hb-1agdhwt.glb",
+      "kind": "vehicle",
+      "bytes": 312608,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/centaur/centaur.mdl",
+      "output": "centaur-083tydz.glb",
+      "kind": "vehicle",
+      "bytes": 224932,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/centaur/centaur_eng.mdl",
+      "output": "centaur_eng-07hhie8.glb",
+      "kind": "vehicle",
+      "bytes": 231700,
+      "parts": 24,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Salamander/salamander_twinstubber.mdl",
+      "output": "salamander_twinstubber-11rlt7t.glb",
+      "kind": "vehicle",
+      "bytes": 552132,
+      "parts": 46,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/dk_heavystubber_x2/DK_heavystubber_x2.mdl",
+      "output": "dk_heavystubber_x2-10yrgrp.glb",
+      "kind": "vehicle",
+      "bytes": 312904,
+      "parts": 14,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/dk_heavyautocannon/DK_heavyautocannon.mdl",
+      "output": "dk_heavyautocannon-0woqngl.glb",
+      "kind": "vehicle",
+      "bytes": 556996,
+      "parts": 26,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/dk_lascannon_x2/DK_lascannon_x2.mdl",
+      "output": "dk_lascannon_x2-1gm2nrd.glb",
+      "kind": "vehicle",
+      "bytes": 236704,
+      "parts": 19,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/destroyer_laser/dk_destroyer_laser.mdl",
+      "output": "dk_destroyer_laser-06hqwlm.glb",
+      "kind": "vehicle",
+      "bytes": 301948,
+      "parts": 16,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/dk_heavy_mortar/dk_heavy_mortar.mdl",
+      "output": "dk_heavy_mortar-0868fut.glb",
+      "kind": "vehicle",
+      "bytes": 191248,
+      "parts": 11,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/dk_quadlauncher/dk_quadlauncher.mdl",
+      "output": "dk_quadlauncher-1m8mbt5.glb",
+      "kind": "vehicle",
+      "bytes": 394440,
+      "parts": 31,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/dk_light_howitzer/dk_light_howitzer.mdl",
+      "output": "dk_light_howitzer-0y0b7ad.glb",
+      "kind": "vehicle",
+      "bytes": 873788,
+      "parts": 31,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/dk_Howitzer/170mm_k18.mdl",
+      "output": "170mm_k18-1sqvjpe.glb",
+      "kind": "vehicle",
+      "bytes": 432872,
+      "parts": 35,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Hydra/hydra.mdl",
+      "output": "hydra-0ashi3f.glb",
+      "kind": "vehicle",
+      "bytes": 301204,
+      "parts": 20,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/minotaur/minotaur.mdl",
+      "output": "minotaur-0l6180c.glb",
+      "kind": "vehicle",
+      "bytes": 211196,
+      "parts": 11,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/colossus_bombard/colossus_bombard.mdl",
+      "output": "colossus_bombard-0rxst0b.glb",
+      "kind": "vehicle",
+      "bytes": 1162292,
+      "parts": 23,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/airborne/ig_valkyrie/ig_valkyrie_bomb.mdl",
+      "output": "ig_valkyrie_bomb-0s1bl91.glb",
+      "kind": "vehicle",
+      "bytes": 262828,
+      "parts": 10,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ely_carriage_cannon/ely_carriage_heavybolter.mdl",
+      "output": "ely_carriage_heavybolter-0l4vnl9.glb",
+      "kind": "vehicle",
+      "bytes": 532764,
+      "parts": 11,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ely_carriage_cannon/ely_carriage_autocannon.mdl",
+      "output": "ely_carriage_autocannon-0yikche.glb",
+      "kind": "vehicle",
+      "bytes": 481272,
+      "parts": 12,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ely_carriage_cannon/ely_carriage_lascannon.mdl",
+      "output": "ely_carriage_lascannon-01qjzor.glb",
+      "kind": "vehicle",
+      "bytes": 476308,
+      "parts": 12,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/cannon/ely_light_howitzer/ely_light_howitzer.mdl",
+      "output": "ely_light_howitzer-1d6co6j.glb",
+      "kind": "vehicle",
+      "bytes": 660932,
+      "parts": 24,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Hydra/wyvern.mdl",
+      "output": "wyvern-0saczfq.glb",
+      "kind": "vehicle",
+      "bytes": 228932,
+      "parts": 16,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/destroyer_laser/destroyer_laser.mdl",
+      "output": "destroyer_laser-0lqosu8.glb",
+      "kind": "vehicle",
+      "bytes": 293884,
+      "parts": 14,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_flamer.mdl",
+      "output": "sentinel_flamer-0dvnk2j.glb",
+      "kind": "vehicle",
+      "bytes": 267216,
+      "parts": 23,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_flamer_rocket.mdl",
+      "output": "sentinel_flamer_rocket-05g09vm.glb",
+      "kind": "vehicle",
+      "bytes": 290920,
+      "parts": 31,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Hellhound/hellhound.mdl",
+      "output": "hellhound-1tt46w3.glb",
+      "kind": "vehicle",
+      "bytes": 211452,
+      "parts": 14,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Hellhound/devil_dog_f.mdl",
+      "output": "devil_dog_f-0lgj5ui.glb",
+      "kind": "vehicle",
+      "bytes": 249716,
+      "parts": 14,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_BC_HB_FL.mdl",
+      "output": "lr_bc_hb_fl-1nblbgb.glb",
+      "kind": "vehicle",
+      "bytes": 356784,
+      "parts": 43,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_multilaser.mdl",
+      "output": "sentinel_multilaser-0hp2atg.glb",
+      "kind": "vehicle",
+      "bytes": 268964,
+      "parts": 23,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_multilaser_rocket.mdl",
+      "output": "sentinel_multilaser_rocket-0u8oarb.glb",
+      "kind": "vehicle",
+      "bytes": 292672,
+      "parts": 31,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera.mdl",
+      "output": "chimera-14jm9f7.glb",
+      "kind": "vehicle",
+      "bytes": 288220,
+      "parts": 24,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_CC_HB_HB.mdl",
+      "output": "lr_cc_hb_hb-04zxvza.glb",
+      "kind": "vehicle",
+      "bytes": 327488,
+      "parts": 41,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_CC_LC_HB.mdl",
+      "output": "lr_cc_lc_hb-1fidkxf.glb",
+      "kind": "vehicle",
+      "bytes": 324932,
+      "parts": 40,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/macharius/macharius.mdl",
+      "output": "macharius-1a1ue5c.glb",
+      "kind": "vehicle",
+      "bytes": 715096,
+      "parts": 19,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/macharius/macharius_ac_hkm.mdl",
+      "output": "macharius_ac_hkm-07bx2wg.glb",
+      "kind": "vehicle",
+      "bytes": 886776,
+      "parts": 35,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ_ryza/LR_BC_HB.mdl",
+      "output": "lr_bc_hb-1377pvf.glb",
+      "kind": "vehicle",
+      "bytes": 276784,
+      "parts": 21,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_BC_HB_HB.mdl",
+      "output": "lr_bc_hb_hb-1v32tbj.glb",
+      "kind": "vehicle",
+      "bytes": 336560,
+      "parts": 41,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_BC_LC_HB.mdl",
+      "output": "lr_bc_lc_hb-14802wy.glb",
+      "kind": "vehicle",
+      "bytes": 334008,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/rogal_dorn/rg_bc_mg.mdl",
+      "output": "rg_bc_mg-038ls7b.glb",
+      "kind": "vehicle",
+      "bytes": 736844,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/baneblade/baneblade.mdl",
+      "output": "baneblade-0tszupk.glb",
+      "kind": "vehicle",
+      "bytes": 375524,
+      "parts": 47,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_ac.mdl",
+      "output": "sentinel_ac-1mhlexc.glb",
+      "kind": "vehicle",
+      "bytes": 275820,
+      "parts": 22,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_ac.mdl",
+      "output": "chimera_ac-1um6rl2.glb",
+      "kind": "vehicle",
+      "bytes": 236560,
+      "parts": 21,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_AC_HB_HB.mdl",
+      "output": "lr_ac_hb_hb-1i1f5z4.glb",
+      "kind": "vehicle",
+      "bytes": 306276,
+      "parts": 41,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_AC_HB_PC.mdl",
+      "output": "lr_ac_hb_pc-1sdphcn.glb",
+      "kind": "vehicle",
+      "bytes": 336892,
+      "parts": 41,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_AC_LC_HB.mdl",
+      "output": "lr_ac_lc_hb-03ljfxx.glb",
+      "kind": "vehicle",
+      "bytes": 313988,
+      "parts": 41,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_melta.mdl",
+      "output": "sentinel_melta-1g1z50n.glb",
+      "kind": "vehicle",
+      "bytes": 278896,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_melta_rocket.mdl",
+      "output": "sentinel_melta_rocket-1k3bunq.glb",
+      "kind": "vehicle",
+      "bytes": 302424,
+      "parts": 31,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Hellhound/devil_dog_hb.mdl",
+      "output": "devil_dog_hb-17djkvk.glb",
+      "kind": "vehicle",
+      "bytes": 225280,
+      "parts": 13,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_VC_HB_HB.mdl",
+      "output": "lr_vc_hb_hb-17p9xyb.glb",
+      "kind": "vehicle",
+      "bytes": 344524,
+      "parts": 42,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/rogal_dorn/rg_oc_dc.mdl",
+      "output": "rg_oc_dc-16020nl.glb",
+      "kind": "vehicle",
+      "bytes": 762688,
+      "parts": 40,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_plasma.mdl",
+      "output": "sentinel_plasma-0r8625y.glb",
+      "kind": "vehicle",
+      "bytes": 282292,
+      "parts": 23,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_plasma_rocket.mdl",
+      "output": "sentinel_plasma_rocket-00i7c21.glb",
+      "kind": "vehicle",
+      "bytes": 306016,
+      "parts": 31,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_BC_HB_PC.mdl",
+      "output": "lr_bc_hb_pc-0w0c9so.glb",
+      "kind": "vehicle",
+      "bytes": 367192,
+      "parts": 41,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_BC_LC_PC.mdl",
+      "output": "lr_bc_lc_pc-0m0hla9.glb",
+      "kind": "vehicle",
+      "bytes": 372140,
+      "parts": 41,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_PC_HB_PC.mdl",
+      "output": "lr_pc_hb_pc-1438tve.glb",
+      "kind": "vehicle",
+      "bytes": 337396,
+      "parts": 40,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_PC_LC_HB.mdl",
+      "output": "lr_pc_lc_hb-0uce3d8.glb",
+      "kind": "vehicle",
+      "bytes": 314492,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_lascannon.mdl",
+      "output": "sentinel_lascannon-1qkwx1b.glb",
+      "kind": "vehicle",
+      "bytes": 267072,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_lascannon_rocket.mdl",
+      "output": "sentinel_lascannon_rocket-0emafm6.glb",
+      "kind": "vehicle",
+      "bytes": 290776,
+      "parts": 31,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_lc.mdl",
+      "output": "chimera_lc-01ldu87.glb",
+      "kind": "vehicle",
+      "bytes": 275736,
+      "parts": 18,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_LC_LC_HB.mdl",
+      "output": "lr_lc_lc_hb-1fpgr0g.glb",
+      "kind": "vehicle",
+      "bytes": 357944,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_dozer.mdl",
+      "output": "chimera_dozer-080190i.glb",
+      "kind": "vehicle",
+      "bytes": 294988,
+      "parts": 25,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/malcador/malcador_def.mdl",
+      "output": "malcador_def-1dffsjo.glb",
+      "kind": "vehicle",
+      "bytes": 823748,
+      "parts": 16,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Hellhound/dk_banewolf.mdl",
+      "output": "dk_banewolf-118czle.glb",
+      "kind": "vehicle",
+      "bytes": 193432,
+      "parts": 13,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ_ryza/LR_PC_HB.mdl",
+      "output": "lr_pc_hb-1rt3r25.glb",
+      "kind": "vehicle",
+      "bytes": 255688,
+      "parts": 21,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ_ryza/LR_LC_HB.mdl",
+      "output": "lr_lc_hb-00twn2p.glb",
+      "kind": "vehicle",
+      "bytes": 303480,
+      "parts": 20,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/malcador/malcador_lc.mdl",
+      "output": "malcador_lc-1vdhj2a.glb",
+      "kind": "vehicle",
+      "bytes": 615388,
+      "parts": 15,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ_ryza/LR_VC_HB.mdl",
+      "output": "lr_vc_hb-1x200vb.glb",
+      "kind": "vehicle",
+      "bytes": 281140,
+      "parts": 21,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/malcador/malcador_vc.mdl",
+      "output": "malcador_vc-0iqm9cg.glb",
+      "kind": "vehicle",
+      "bytes": 643696,
+      "parts": 15,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/macharius/macharius_vc.mdl",
+      "output": "macharius_vc-0g3a9tw.glb",
+      "kind": "vehicle",
+      "bytes": 753716,
+      "parts": 21,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Salamander/salamander_dozer.mdl",
+      "output": "salamander_dozer-0f1986w.glb",
+      "kind": "vehicle",
+      "bytes": 416128,
+      "parts": 42,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ_ryza/LR_AC_HB.mdl",
+      "output": "lr_ac_hb-14yb1ee.glb",
+      "kind": "vehicle",
+      "bytes": 253020,
+      "parts": 21,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ_ryza/LR_CC_HB.mdl",
+      "output": "lr_cc_hb-1ke4lsk.glb",
+      "kind": "vehicle",
+      "bytes": 267704,
+      "parts": 21,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ_ryza/lr_cc_hb_eng.mdl",
+      "output": "lr_cc_hb_eng-1ioi7lb.glb",
+      "kind": "vehicle",
+      "bytes": 275772,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/ragnarok/ragnarok.mdl",
+      "output": "ragnarok-1lytwe8.glb",
+      "kind": "vehicle",
+      "bytes": 409836,
+      "parts": 29,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/malcador/malcador_bc.mdl",
+      "output": "malcador_bc-0639d6s.glb",
+      "kind": "vehicle",
+      "bytes": 604176,
+      "parts": 15,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_rocketpod.mdl",
+      "output": "sentinel_rocketpod-0lx0afx.glb",
+      "kind": "vehicle",
+      "bytes": 291136,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/destroyer_thunderer/dk_destroyer_thunderer.mdl",
+      "output": "dk_destroyer_thunderer-0jbj3e6.glb",
+      "kind": "vehicle",
+      "bytes": 300844,
+      "parts": 16,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ_ryza/lr_dc_hb_eng.mdl",
+      "output": "lr_dc_hb_eng-14owpvi.glb",
+      "kind": "vehicle",
+      "bytes": 295080,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/macharius/macharius_vulcan.mdl",
+      "output": "macharius_vulcan-1h3i818.glb",
+      "kind": "vehicle",
+      "bytes": 744872,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/baneblade/hellhammer.mdl",
+      "output": "hellhammer-09wzuzt.glb",
+      "kind": "vehicle",
+      "bytes": 383604,
+      "parts": 47,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/Tauros_Venator/tauros_venator_mul.mdl",
+      "output": "tauros_venator_mul-1kmdt13.glb",
+      "kind": "vehicle",
+      "bytes": 578188,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_multilaser.mdl",
+      "output": "sentinel_light_multilaser-1upxdx9.glb",
+      "kind": "vehicle",
+      "bytes": 197508,
+      "parts": 24,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_multilaser_rocket.mdl",
+      "output": "sentinel_light_multilaser_rocket-197npho.glb",
+      "kind": "vehicle",
+      "bytes": 221224,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/Tauros_Venator/tauros_venator_mul_hkm.mdl",
+      "output": "tauros_venator_mul_hkm-1uudm34.glb",
+      "kind": "vehicle",
+      "bytes": 565232,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/Tauros/Tauros_fl.mdl",
+      "output": "tauros_fl-0gomavz.glb",
+      "kind": "vehicle",
+      "bytes": 408436,
+      "parts": 30,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_flamer.mdl",
+      "output": "sentinel_light_flamer-0stc1bu.glb",
+      "kind": "vehicle",
+      "bytes": 195760,
+      "parts": 24,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_flamer_rocket.mdl",
+      "output": "sentinel_light_flamer_rocket-182dcd1.glb",
+      "kind": "vehicle",
+      "bytes": 219472,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/Tauros/Tauros_fl_hkm.mdl",
+      "output": "tauros_fl_hkm-1jk7bw8.glb",
+      "kind": "vehicle",
+      "bytes": 427536,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_melta.mdl",
+      "output": "sentinel_light_melta-1duaryg.glb",
+      "kind": "vehicle",
+      "bytes": 207444,
+      "parts": 24,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_melta_mul.mdl",
+      "output": "sentinel_light_melta_mul-1slhtmx.glb",
+      "kind": "vehicle",
+      "bytes": 220888,
+      "parts": 26,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_melta_rocket.mdl",
+      "output": "sentinel_light_melta_rocket-015j1oj.glb",
+      "kind": "vehicle",
+      "bytes": 230968,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_stc.mdl",
+      "output": "sentinel_light_stc-0litgyl.glb",
+      "kind": "vehicle",
+      "bytes": 225160,
+      "parts": 27,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_ac.mdl",
+      "output": "sentinel_light_ac-0iv0501.glb",
+      "kind": "vehicle",
+      "bytes": 204364,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_ac_rl.mdl",
+      "output": "sentinel_light_ac_rl-0mk1jky.glb",
+      "kind": "vehicle",
+      "bytes": 228272,
+      "parts": 31,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_bolter.mdl",
+      "output": "sentinel_light_bolter-1m78ghd.glb",
+      "kind": "vehicle",
+      "bytes": 194520,
+      "parts": 24,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_bolter_rl.mdl",
+      "output": "sentinel_light_bolter_rl-0m3mm2q.glb",
+      "kind": "vehicle",
+      "bytes": 218228,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_lascannon.mdl",
+      "output": "sentinel_light_lascannon-1cjwih0.glb",
+      "kind": "vehicle",
+      "bytes": 195616,
+      "parts": 24,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_lascannon_rocket.mdl",
+      "output": "sentinel_light_lascannon_rocket-111tt4n.glb",
+      "kind": "vehicle",
+      "bytes": 219328,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/Tauros_Venator/tauros_venator_lc.mdl",
+      "output": "tauros_venator_lc-1ywkhjw.glb",
+      "kind": "vehicle",
+      "bytes": 574444,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/car/Tauros_Venator/tauros_venator_lc_hkm.mdl",
+      "output": "tauros_venator_lc_hkm-1diho4r.glb",
+      "kind": "vehicle",
+      "bytes": 561488,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_plasma.mdl",
+      "output": "sentinel_light_plasma-0pn81lf.glb",
+      "kind": "vehicle",
+      "bytes": 210840,
+      "parts": 24,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Sentinel/sentinel_light_plasma_rocket.mdl",
+      "output": "sentinel_light_plasma_rocket-1bnl262.glb",
+      "kind": "vehicle",
+      "bytes": 234564,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_MG_HB_HB.mdl",
+      "output": "lr_mg_hb_hb-0xclazc.glb",
+      "kind": "vehicle",
+      "bytes": 360772,
+      "parts": 41,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_MG_LC_HB.mdl",
+      "output": "lr_mg_lc_hb-1um0ve5.glb",
+      "kind": "vehicle",
+      "bytes": 368488,
+      "parts": 41,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Salamander/salamander_heavyflamer.mdl",
+      "output": "salamander_heavyflamer-1cdx522.glb",
+      "kind": "vehicle",
+      "bytes": 598400,
+      "parts": 36,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_BC_LC_FL_ENG.mdl",
+      "output": "lr_bc_lc_fl_eng-1d80jwp.glb",
+      "kind": "vehicle",
+      "bytes": 369812,
+      "parts": 45,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_DC_LC_PC.mdl",
+      "output": "lr_dc_lc_pc-17dygqn.glb",
+      "kind": "vehicle",
+      "bytes": 348176,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_BC_LC_HB_ENG.mdl",
+      "output": "lr_bc_lc_hb_eng-0qitm2x.glb",
+      "kind": "vehicle",
+      "bytes": 352368,
+      "parts": 43,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_PC_LC_PC_ENG.mdl",
+      "output": "lr_pc_lc_pc_eng-1swj24s.glb",
+      "kind": "vehicle",
+      "bytes": 350424,
+      "parts": 42,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_lc_hkm_pintle.mdl",
+      "output": "chimera_lc_hkm_pintle-09gocap.glb",
+      "kind": "vehicle",
+      "bytes": 462208,
+      "parts": 28,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_VC_LC_HB.mdl",
+      "output": "lr_vc_lc_hb-0tq0p32.glb",
+      "kind": "vehicle",
+      "bytes": 352236,
+      "parts": 42,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_VC_LC_PC.mdl",
+      "output": "lr_vc_lc_pc-0n4j8hp.glb",
+      "kind": "vehicle",
+      "bytes": 380092,
+      "parts": 42,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/macharius/macharius_vc_ac_hkm.mdl",
+      "output": "macharius_vc_ac_hkm-0cv9xo4.glb",
+      "kind": "vehicle",
+      "bytes": 925404,
+      "parts": 37,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Salamander/salamander_heavybolter.mdl",
+      "output": "salamander_heavybolter-0cvslu9.glb",
+      "kind": "vehicle",
+      "bytes": 565072,
+      "parts": 47,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_light/Chimera/chimera_ac_hkm_pintle.mdl",
+      "output": "chimera_ac_hkm_pintle-01v0na6.glb",
+      "kind": "vehicle",
+      "bytes": 423056,
+      "parts": 31,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_medium/leman_russ/LR_AC_LC_PC.mdl",
+      "output": "lr_ac_lc_pc-1bupmh2.glb",
+      "kind": "vehicle",
+      "bytes": 341840,
+      "parts": 41,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Imperial_guard/tank_heavy/macharius/macharius_vulcan_ac_hkm.mdl",
+      "output": "macharius_vulcan_ac_hkm-0aagpp8.glb",
+      "kind": "vehicle",
+      "bytes": 890896,
+      "parts": 35,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/generic/dark_adept1/dark_adept1.mdl",
+      "output": "dark_adept1-0q3jwps.glb",
+      "kind": "infantry",
+      "bytes": 424116,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_4/bloodpact_4.mdl",
+      "output": "bloodpact_4-13vxf39.glb",
+      "kind": "infantry",
+      "bytes": 365832,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_3/bloodpact_3.mdl",
+      "output": "bloodpact_3-1vnp3zh.glb",
+      "kind": "infantry",
+      "bytes": 318676,
+      "parts": 1,
+      "unitCount": 7,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_vet_1/bloodpact_vet_1.mdl",
+      "output": "bloodpact_vet_1-0y61e95.glb",
+      "kind": "infantry",
+      "bytes": 419184,
+      "parts": 1,
+      "unitCount": 5,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_vet_3/bloodpact_vet_3.mdl",
+      "output": "bloodpact_vet_3-0bsi0y9.glb",
+      "kind": "infantry",
+      "bytes": 361016,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_vet_4/bloodpact_vet_4.mdl",
+      "output": "bloodpact_vet_4-1dreoql.glb",
+      "kind": "infantry",
+      "bytes": 373976,
+      "parts": 1,
+      "unitCount": 5,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_2/bloodpact_2.mdl",
+      "output": "bloodpact_2-16z1jj9.glb",
+      "kind": "infantry",
+      "bytes": 306104,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_radio_1/bloodpact_radio_1.mdl",
+      "output": "bloodpact_radio_1-00x0bnx.glb",
+      "kind": "infantry",
+      "bytes": 356984,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_crew_2/bloodpact_crew_2.mdl",
+      "output": "bloodpact_crew_2-0w2svj9.glb",
+      "kind": "infantry",
+      "bytes": 228536,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_crew_1/bloodpact_crew_1.mdl",
+      "output": "bloodpact_crew_1-1uxrfpf.glb",
+      "kind": "infantry",
+      "bytes": 201248,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/generic/chaos_psyker/chaos_psyker.mdl",
+      "output": "chaos_psyker-0hvync0.glb",
+      "kind": "infantry",
+      "bytes": 263360,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_new6th_7_mauler/moebian_new6th_7_mauler.mdl",
+      "output": "moebian_new6th_7_mauler-1b9o0f0.glb",
+      "kind": "infantry",
+      "bytes": 731964,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_new6th_1/moebian_new6th_1.mdl",
+      "output": "moebian_new6th_1-19v2xg2.glb",
+      "kind": "infantry",
+      "bytes": 829572,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_6th_scab_shooter_2/moebian_6th_scab_shooter_2.mdl",
+      "output": "moebian_6th_scab_shooter_2-0on3zvm.glb",
+      "kind": "infantry",
+      "bytes": 54780,
+      "parts": 1,
+      "unitCount": 5,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_new6th_5_hotshot/moebian_new6th_5_hotshot.mdl",
+      "output": "moebian_new6th_5_hotshot-14ghwnm.glb",
+      "kind": "infantry",
+      "bytes": 785532,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_6th_scab_gunner/moebian_6th_scab_gunner.mdl",
+      "output": "moebian_6th_scab_gunner-1cla1k4.glb",
+      "kind": "infantry",
+      "bytes": 90428,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_new6th_3/moebian_new6th_3.mdl",
+      "output": "moebian_new6th_3-1aerx0y.glb",
+      "kind": "infantry",
+      "bytes": 712072,
+      "parts": 1,
+      "unitCount": 5,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_6th_scab_shooter_3/moebian_6th_scab_shooter_3.mdl",
+      "output": "moebian_6th_scab_shooter_3-10gj76s.glb",
+      "kind": "infantry",
+      "bytes": 48764,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_new6th_10_flametrooper/moebian_new6th_10_flametrooper.mdl",
+      "output": "moebian_new6th_10_flametrooper-1lxqkzo.glb",
+      "kind": "infantry",
+      "bytes": 741168,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_6th_scab_shooter_1/moebian_6th_scab_shooter_1.mdl",
+      "output": "moebian_6th_scab_shooter_1-1rvvp6g.glb",
+      "kind": "infantry",
+      "bytes": 69952,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]inventory/-weapon/-flamethrower/ig_flame/ig_flamethrower.mdl",
+      "output": "ig_flamethrower-00mck4c.glb",
+      "kind": "vehicle",
+      "bytes": 24764,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_new6th_9_sniper/moebian_new6th_9_sniper.mdl",
+      "output": "moebian_new6th_9_sniper-1923zdo.glb",
+      "kind": "infantry",
+      "bytes": 732908,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_new6th_2/moebian_new6th_2.mdl",
+      "output": "moebian_new6th_2-1pzp8hk.glb",
+      "kind": "infantry",
+      "bytes": 671924,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_new6th_4/moebian_new6th_4.mdl",
+      "output": "moebian_new6th_4-1cln64s.glb",
+      "kind": "infantry",
+      "bytes": 808860,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/militia/traitor_militia_4/traitor_militia_4.mdl",
+      "output": "traitor_militia_4-0sty368.glb",
+      "kind": "infantry",
+      "bytes": 254996,
+      "parts": 1,
+      "unitCount": 5,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/militia/traitor_militia_enforcer/traitor_militia_enforcer.mdl",
+      "output": "traitor_militia_enforcer-0oh996a.glb",
+      "kind": "infantry",
+      "bytes": 298064,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_sarge_1/bloodpact_sarge_1.mdl",
+      "output": "bloodpact_sarge_1-0ws2neh.glb",
+      "kind": "infantry",
+      "bytes": 427784,
+      "parts": 1,
+      "unitCount": 7,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_cmd_chimera/bp_cmd_chimera.mdl",
+      "output": "bp_cmd_chimera-0nvo2yg.glb",
+      "kind": "vehicle",
+      "bytes": 390772,
+      "parts": 35,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_deathbrigade_3/bloodpact_deathbrigade_3.mdl",
+      "output": "bloodpact_deathbrigade_3-0u3k05h.glb",
+      "kind": "infantry",
+      "bytes": 520208,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_deathbrigade_1/bloodpact_deathbrigade_1.mdl",
+      "output": "bloodpact_deathbrigade_1-1ikdba5.glb",
+      "kind": "infantry",
+      "bytes": 479200,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_deathbrigade_sarge_1/bloodpact_deathbrigade_sarge_1.mdl",
+      "output": "bloodpact_deathbrigade_sarge_1-1r7pw8r.glb",
+      "kind": "infantry",
+      "bytes": 426884,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/deathguard/deathguard_heretic/deathguard_heretic.mdl",
+      "output": "deathguard_heretic-0t2o668.glb",
+      "kind": "infantry",
+      "bytes": 46716,
+      "parts": 1,
+      "unitCount": 7,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/deathguard/deathguard_hereticmutant/deathguard_hereticmutant.mdl",
+      "output": "deathguard_hereticmutant-1a96gsm.glb",
+      "kind": "infantry",
+      "bytes": 46632,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_6th_scab_sarge/moebian_6th_scab_sarge.mdl",
+      "output": "moebian_6th_scab_sarge-1jvvgc8.glb",
+      "kind": "infantry",
+      "bytes": 65096,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_new6th_6_shotgunner/moebian_new6th_6_shotgunner.mdl",
+      "output": "moebian_new6th_6_shotgunner-1w086yg.glb",
+      "kind": "infantry",
+      "bytes": 808028,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/cultists/cultist_bp03/heretic.mdl",
+      "output": "heretic-1b5baiw.glb",
+      "kind": "infantry",
+      "bytes": 250072,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/cultists/cultist_bp04/heretic.mdl",
+      "output": "heretic-1iu04zx.glb",
+      "kind": "infantry",
+      "bytes": 274292,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/cultists/cultist_bp01/chaos_heretic_01.mdl",
+      "output": "chaos_heretic_01-0h3qvm3.glb",
+      "kind": "infantry",
+      "bytes": 198352,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/cultists/cultist_bp02/heretic.mdl",
+      "output": "heretic-0v5zcbf.glb",
+      "kind": "infantry",
+      "bytes": 240648,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/militia/traitor_militia_1/traitor_militia_1.mdl",
+      "output": "traitor_militia_1-11chbac.glb",
+      "kind": "infantry",
+      "bytes": 252256,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/militia/traitor_militia_3/traitor_militia_3.mdl",
+      "output": "traitor_militia_3-1x366h8.glb",
+      "kind": "infantry",
+      "bytes": 252236,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/militia/traitor_militia_2/traitor_militia_2.mdl",
+      "output": "traitor_militia_2-0qds9d4.glb",
+      "kind": "infantry",
+      "bytes": 232380,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/car/bp_ammotruck/bp_truck_pintle.mdl",
+      "output": "bp_truck_pintle-15y6fy2.glb",
+      "kind": "vehicle",
+      "bytes": 1066456,
+      "parts": 51,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_1/bloodpact_1.mdl",
+      "output": "bloodpact_1-0idi3wt.glb",
+      "kind": "infantry",
+      "bytes": 346984,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_chimera/bp_chimera.mdl",
+      "output": "bp_chimera-0gqh7rq.glb",
+      "kind": "vehicle",
+      "bytes": 322844,
+      "parts": 25,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_melee_1/bloodpact_melee_1.mdl",
+      "output": "bloodpact_melee_1-17ucub9.glb",
+      "kind": "infantry",
+      "bytes": 286712,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_chimera/bp_chimera_ac.mdl",
+      "output": "bp_chimera_ac-0w5i50h.glb",
+      "kind": "vehicle",
+      "bytes": 313820,
+      "parts": 25,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_vet_2/bloodpact_vet_2.mdl",
+      "output": "bloodpact_vet_2-0wjnh05.glb",
+      "kind": "infantry",
+      "bytes": 393544,
+      "parts": 1,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_chimera/bp_chimera_ac_hkm.mdl",
+      "output": "bp_chimera_ac_hkm-053c7bu.glb",
+      "kind": "vehicle",
+      "bytes": 328744,
+      "parts": 28,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/bloodpact/bloodpact_deathbrigade_2/bloodpact_deathbrigade_2.mdl",
+      "output": "bloodpact_deathbrigade_2-0ewzb8b.glb",
+      "kind": "infantry",
+      "bytes": 490464,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/airborne/tg_valkyrie/tg_valkyrie.mdl",
+      "output": "tg_valkyrie-0g92eks.glb",
+      "kind": "vehicle",
+      "bytes": 287208,
+      "parts": 9,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/cultists/cultist_dg03/heretic.mdl",
+      "output": "heretic-0mho043.glb",
+      "kind": "infantry",
+      "bytes": 250072,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/cultists/cultist_dg04/heretic.mdl",
+      "output": "heretic-0mzgxbu.glb",
+      "kind": "infantry",
+      "bytes": 274292,
+      "parts": 1,
+      "unitCount": 3,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/cultists/cultist_dg01/chaos_heretic_01.mdl",
+      "output": "chaos_heretic_01-1jj9ma6.glb",
+      "kind": "infantry",
+      "bytes": 198352,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/cultists/cultist_dg02/heretic.mdl",
+      "output": "heretic-1f5nkio.glb",
+      "kind": "infantry",
+      "bytes": 240648,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/car/dg_ammotruck/dg_truck_pintle.mdl",
+      "output": "dg_truck_pintle-1uov5bn.glb",
+      "kind": "vehicle",
+      "bytes": 1070964,
+      "parts": 52,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_salamander/dg_salamander_unarmed_transport.mdl",
+      "output": "dg_salamander_unarmed_transport-0g5j018.glb",
+      "kind": "vehicle",
+      "bytes": 261856,
+      "parts": 14,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "humanskin/traitor_guard/moebian6th/moebian_new6th_8_berserker/moebian_new6th_8_berserker.mdl",
+      "output": "moebian_new6th_8_berserker-00tr3m0.glb",
+      "kind": "infantry",
+      "bytes": 773888,
+      "parts": 1,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_taurox/dg_taurox.mdl",
+      "output": "dg_taurox-1phwbcn.glb",
+      "kind": "vehicle",
+      "bytes": 1391868,
+      "parts": 13,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_chimera/nurgle_chimera.mdl",
+      "output": "nurgle_chimera-0auzv7v.glb",
+      "kind": "vehicle",
+      "bytes": 339684,
+      "parts": 29,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_taurox/dg_taurox_ac.mdl",
+      "output": "dg_taurox_ac-1hefgui.glb",
+      "kind": "vehicle",
+      "bytes": 1524948,
+      "parts": 18,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/special/inf_crate_bp/inf_crate.mdl",
+      "output": "inf_crate-0aeu51x.glb",
+      "kind": "vehicle",
+      "bytes": 39236,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/special/ammo_trailer_bp/ammo_trailer.mdl",
+      "output": "ammo_trailer-0mtpvtj.glb",
+      "kind": "vehicle",
+      "bytes": 78072,
+      "parts": 7,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/car/bp_ammotruck/bp_ammotruck.mdl",
+      "output": "bp_ammotruck-1y0on4n.glb",
+      "kind": "vehicle",
+      "bytes": 1026108,
+      "parts": 58,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/car/bp_ammotruck/bp_ammotruck_pintle.mdl",
+      "output": "bp_ammotruck_pintle-1bruxr0.glb",
+      "kind": "vehicle",
+      "bytes": 1043164,
+      "parts": 60,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/car/bp_ammotruck/bp_truck.mdl",
+      "output": "bp_truck-01ngo49.glb",
+      "kind": "vehicle",
+      "bytes": 1049604,
+      "parts": 49,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/car/tg_fueltruck/ig_fueltruck.mdl",
+      "output": "ig_fueltruck-0dlca6b.glb",
+      "kind": "vehicle",
+      "bytes": 770060,
+      "parts": 33,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_trojan/bp_trojan.mdl",
+      "output": "bp_trojan-1wu9300.glb",
+      "kind": "vehicle",
+      "bytes": 242700,
+      "parts": 11,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/cannon/BP_stand_gatling/BP_stand_gatling.mdl",
+      "output": "bp_stand_gatling-1wgxw7w.glb",
+      "kind": "vehicle",
+      "bytes": 388828,
+      "parts": 8,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/cannon/tg_emplacement/stand_lascannon.mdl",
+      "output": "stand_lascannon-0wlauaw.glb",
+      "kind": "vehicle",
+      "bytes": 354552,
+      "parts": 4,
+      "unitCount": 4,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/cannon/tg_emplacement/stand_heavybolter.mdl",
+      "output": "stand_heavybolter-02mumje.glb",
+      "kind": "vehicle",
+      "bytes": 470464,
+      "parts": 6,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/cannon/tg_emplacement/stand_autocannon.mdl",
+      "output": "stand_autocannon-1aiyuqr.glb",
+      "kind": "vehicle",
+      "bytes": 520960,
+      "parts": 6,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/cannon/bp_100mm_atgun/bp_100mm_atgun.mdl",
+      "output": "bp_100mm_atgun-1mmzvrc.glb",
+      "kind": "vehicle",
+      "bytes": 692112,
+      "parts": 28,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/cannon/tg_emplacement/stand_missilelauncher.mdl",
+      "output": "stand_missilelauncher-05j7jl9.glb",
+      "kind": "vehicle",
+      "bytes": 467252,
+      "parts": 4,
+      "unitCount": 2,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/cannon/BP_mortar/BP_mortar.mdl",
+      "output": "bp_mortar-1ali10m.glb",
+      "kind": "vehicle",
+      "bytes": 72952,
+      "parts": 4,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/cannon/BP_howitzer/BP_howitzer.mdl",
+      "output": "bp_howitzer-1sl7f5q.glb",
+      "kind": "vehicle",
+      "bytes": 481732,
+      "parts": 33,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_basilisk/bp_basilisk.mdl",
+      "output": "bp_basilisk-1gvecc0.glb",
+      "kind": "vehicle",
+      "bytes": 594608,
+      "parts": 17,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ_ryza/bp_lr_dc_hb.mdl",
+      "output": "bp_lr_dc_hb-1ejpz8p.glb",
+      "kind": "vehicle",
+      "bytes": 375028,
+      "parts": 83,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_colossus_bombard/chaos_colossus_bombard.mdl",
+      "output": "chaos_colossus_bombard-0w53b2g.glb",
+      "kind": "vehicle",
+      "bytes": 1323536,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/special/inf_crate_dg/inf_crate.mdl",
+      "output": "inf_crate-1tk87nd.glb",
+      "kind": "vehicle",
+      "bytes": 39236,
+      "parts": 1,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/special/ammo_trailer_dg/ammo_trailer.mdl",
+      "output": "ammo_trailer-0vgml11.glb",
+      "kind": "vehicle",
+      "bytes": 78072,
+      "parts": 7,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/car/dg_ammotruck/dg_ammotruck.mdl",
+      "output": "dg_ammotruck-1v1bwtk.glb",
+      "kind": "vehicle",
+      "bytes": 1037200,
+      "parts": 58,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/car/dg_ammotruck/dg_ammotruck_pintle.mdl",
+      "output": "dg_ammotruck_pintle-0tvqfh5.glb",
+      "kind": "vehicle",
+      "bytes": 1054348,
+      "parts": 61,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/car/dg_ammotruck/dg_truck.mdl",
+      "output": "dg_truck-0guayry.glb",
+      "kind": "vehicle",
+      "bytes": 1054112,
+      "parts": 50,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_trojan/dg_trojan.mdl",
+      "output": "dg_trojan-0971oor.glb",
+      "kind": "vehicle",
+      "bytes": 242552,
+      "parts": 11,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/cannon/dg_100mm_atgun/dg_100mm_atgun.mdl",
+      "output": "dg_100mm_atgun-1ba15qx.glb",
+      "kind": "vehicle",
+      "bytes": 756324,
+      "parts": 36,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/cannon/DG_mortar/DG_mortar.mdl",
+      "output": "dg_mortar-0xpmxxd.glb",
+      "kind": "vehicle",
+      "bytes": 72952,
+      "parts": 4,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/cannon/dg_howitzer/dg_howitzer.mdl",
+      "output": "dg_howitzer-0azsa05.glb",
+      "kind": "vehicle",
+      "bytes": 470804,
+      "parts": 30,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ_ryza/dg_lr_dc_hb.mdl",
+      "output": "dg_lr_dc_hb-19q0y8h.glb",
+      "kind": "vehicle",
+      "bytes": 347512,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/dg_plaguecrawler/plague_crawler.mdl",
+      "output": "plague_crawler-1voh477.glb",
+      "kind": "vehicle",
+      "bytes": 1414384,
+      "parts": 29,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_light_flamer.mdl",
+      "output": "bp_sentinel_light_flamer-0b1ddnd.glb",
+      "kind": "vehicle",
+      "bytes": 244200,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_light_flamer_rocket.mdl",
+      "output": "bp_sentinel_light_flamer_rocket-03ruh8g.glb",
+      "kind": "vehicle",
+      "bytes": 267936,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_flamer.mdl",
+      "output": "bp_sentinel_flamer-1urhmm4.glb",
+      "kind": "vehicle",
+      "bytes": 334648,
+      "parts": 33,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_flamer_rocket.mdl",
+      "output": "bp_sentinel_flamer_rocket-143mkjz.glb",
+      "kind": "vehicle",
+      "bytes": 358400,
+      "parts": 41,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_hellhound/bp_hellhound.mdl",
+      "output": "bp_hellhound-02jfrui.glb",
+      "kind": "vehicle",
+      "bytes": 264436,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_hellhound/bp_devildog_flamer.mdl",
+      "output": "bp_devildog_flamer-17jwznf.glb",
+      "kind": "vehicle",
+      "bytes": 302704,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/bp_lr_cc_fl_fl.mdl",
+      "output": "bp_lr_cc_fl_fl-02wkh0u.glb",
+      "kind": "vehicle",
+      "bytes": 662852,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/bp_lr_bc_lc_fl.mdl",
+      "output": "bp_lr_bc_lc_fl-152xlzq.glb",
+      "kind": "vehicle",
+      "bytes": 645112,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/BP_LR_BC_MM_FL_ENG.mdl",
+      "output": "bp_lr_bc_mm_fl_eng-188necg.glb",
+      "kind": "vehicle",
+      "bytes": 644092,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_light_melta.mdl",
+      "output": "bp_sentinel_light_melta-1yfi7ip.glb",
+      "kind": "vehicle",
+      "bytes": 251636,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_light_melta_rocket.mdl",
+      "output": "bp_sentinel_light_melta_rocket-09w8o6w.glb",
+      "kind": "vehicle",
+      "bytes": 275188,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_melta.mdl",
+      "output": "bp_sentinel_melta-0fwekgu.glb",
+      "kind": "vehicle",
+      "bytes": 288692,
+      "parts": 24,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_melta_rocket.mdl",
+      "output": "bp_sentinel_melta_rocket-0aiyb81.glb",
+      "kind": "vehicle",
+      "bytes": 356392,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_hellhound/bp_devildog_hb.mdl",
+      "output": "bp_devildog_hb-0x79r92.glb",
+      "kind": "vehicle",
+      "bytes": 278264,
+      "parts": 22,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/bp_lr_mg_mm_fl.mdl",
+      "output": "bp_lr_mg_mm_fl-08dbuys.glb",
+      "kind": "vehicle",
+      "bytes": 675792,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/bp_lr_mg_lc_hb.mdl",
+      "output": "bp_lr_mg_lc_hb-1nv8jdt.glb",
+      "kind": "vehicle",
+      "bytes": 668636,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/bp_lr_cc_mm_hb.mdl",
+      "output": "bp_lr_cc_mm_hb-1yjtqny.glb",
+      "kind": "vehicle",
+      "bytes": 627564,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_light_ac.mdl",
+      "output": "bp_sentinel_light_ac-0tka8yy.glb",
+      "kind": "vehicle",
+      "bytes": 240288,
+      "parts": 30,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_light_ac_rl.mdl",
+      "output": "bp_sentinel_light_ac_rl-1we59bb.glb",
+      "kind": "vehicle",
+      "bytes": 264020,
+      "parts": 38,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_ac.mdl",
+      "output": "bp_sentinel_ac-14iiv2n.glb",
+      "kind": "vehicle",
+      "bytes": 330744,
+      "parts": 31,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_ac_rl.mdl",
+      "output": "bp_sentinel_ac_rl-0pf9jl8.glb",
+      "kind": "vehicle",
+      "bytes": 354496,
+      "parts": 39,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_hydra/bp_hydra.mdl",
+      "output": "bp_hydra-0raln88.glb",
+      "kind": "vehicle",
+      "bytes": 370848,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ_ryza/bp_lr_ac_hb.mdl",
+      "output": "bp_lr_ac_hb-1gustie.glb",
+      "kind": "vehicle",
+      "bytes": 341212,
+      "parts": 85,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_stalk_tank/bp_stalk_tank.mdl",
+      "output": "bp_stalk_tank-0m0cwjk.glb",
+      "kind": "vehicle",
+      "bytes": 116784,
+      "parts": 14,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/bp_stalk_tank_scorpian/bp_stalk_tank_scorpian.mdl",
+      "output": "bp_stalk_tank_scorpian-0j3rxj9.glb",
+      "kind": "vehicle",
+      "bytes": 232696,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_hb.mdl",
+      "output": "bp_sentinel_hb-0josy2p.glb",
+      "kind": "vehicle",
+      "bytes": 319368,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_hb_rocket.mdl",
+      "output": "bp_sentinel_hb_rocket-1wlelyg.glb",
+      "kind": "vehicle",
+      "bytes": 343124,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_chimera/bp_chimera_hkm.mdl",
+      "output": "bp_chimera_hkm-1a5sx8t.glb",
+      "kind": "vehicle",
+      "bytes": 337772,
+      "parts": 28,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ_ryza/bp_lr_cc_hb.mdl",
+      "output": "bp_lr_cc_hb-1p9v3fo.glb",
+      "kind": "vehicle",
+      "bytes": 355712,
+      "parts": 83,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/bp_lr_cc_hb_hb.mdl",
+      "output": "bp_lr_cc_hb_hb-1ky41vm.glb",
+      "kind": "vehicle",
+      "bytes": 627636,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ_ryza/bp_lr_bc_hb.mdl",
+      "output": "bp_lr_bc_hb-12yba4r.glb",
+      "kind": "vehicle",
+      "bytes": 364696,
+      "parts": 82,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/bp_lr_bc_hb_hb.mdl",
+      "output": "bp_lr_bc_hb_hb-0muuct7.glb",
+      "kind": "vehicle",
+      "bytes": 636712,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/BP_LR_BC_LC_HB.mdl",
+      "output": "bp_lr_bc_lc_hb-0wlhpqu.glb",
+      "kind": "vehicle",
+      "bytes": 644420,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/possessed_leman_russ/possessed_leman_russ.mdl",
+      "output": "possessed_leman_russ-1ejpxod.glb",
+      "kind": "vehicle",
+      "bytes": 1072704,
+      "parts": 61,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_heavy/bp_macharius/bp_macharius.mdl",
+      "output": "bp_macharius-199xkml.glb",
+      "kind": "vehicle",
+      "bytes": 1147696,
+      "parts": 45,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_heavy/bp_macharius/bp_macharius_ac_hkm.mdl",
+      "output": "bp_macharius_ac_hkm-05w56f7.glb",
+      "kind": "vehicle",
+      "bytes": 1319388,
+      "parts": 61,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_heavy/bp_baneblade/bp_baneblade.mdl",
+      "output": "bp_baneblade-1w18j4b.glb",
+      "kind": "vehicle",
+      "bytes": 375528,
+      "parts": 47,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ_ryza/bp_lr_pc_hb.mdl",
+      "output": "bp_lr_pc_hb-0n9vpf1.glb",
+      "kind": "vehicle",
+      "bytes": 343600,
+      "parts": 82,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/BP_LR_BC_HB_PC.mdl",
+      "output": "bp_lr_bc_hb_pc-0xnr0uc.glb",
+      "kind": "vehicle",
+      "bytes": 667328,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/BP_LR_PC_HB_PC.mdl",
+      "output": "bp_lr_pc_hb_pc-16tqrti.glb",
+      "kind": "vehicle",
+      "bytes": 647808,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/BP_LR_BC_LC_PC.mdl",
+      "output": "bp_lr_bc_lc_pc-16wzizp.glb",
+      "kind": "vehicle",
+      "bytes": 672276,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_light_lascannon.mdl",
+      "output": "bp_sentinel_light_lascannon-1v7robl.glb",
+      "kind": "vehicle",
+      "bytes": 230004,
+      "parts": 31,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_light_lascannon_rocket.mdl",
+      "output": "bp_sentinel_light_lascannon_rocket-092xjrc.glb",
+      "kind": "vehicle",
+      "bytes": 253748,
+      "parts": 39,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_lascannon.mdl",
+      "output": "bp_sentinel_lascannon-1ibsemq.glb",
+      "kind": "vehicle",
+      "bytes": 320484,
+      "parts": 32,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_light/bp_sentinel/bp_sentinel_lascannon_rocket.mdl",
+      "output": "bp_sentinel_lascannon_rocket-1h6ind9.glb",
+      "kind": "vehicle",
+      "bytes": 344240,
+      "parts": 40,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ_ryza/bp_lr_lc_hb.mdl",
+      "output": "bp_lr_lc_hb-0rezbvl.glb",
+      "kind": "vehicle",
+      "bytes": 391388,
+      "parts": 81,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/BP_LR_BC_LC_HB_ENG.mdl",
+      "output": "bp_lr_bc_lc_hb_eng-1lc91fh.glb",
+      "kind": "vehicle",
+      "bytes": 636936,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ_ryza/bp_lr_vc_hb.mdl",
+      "output": "bp_lr_vc_hb-0ibjqfr.glb",
+      "kind": "vehicle",
+      "bytes": 369148,
+      "parts": 83,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_medium/leman_russ/BP_LR_VC_LC_HB.mdl",
+      "output": "bp_lr_vc_lc_hb-1309twa.glb",
+      "kind": "vehicle",
+      "bytes": 652384,
+      "parts": 57,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/bloodpact/tank_heavy/bp_macharius/bp_macharius_vc.mdl",
+      "output": "bp_macharius_vc-0zxygkn.glb",
+      "kind": "vehicle",
+      "bytes": 1186328,
+      "parts": 47,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_salamander/dg_salamander_toxflamer.mdl",
+      "output": "dg_salamander_toxflamer-0bqj2tw.glb",
+      "kind": "vehicle",
+      "bytes": 489992,
+      "parts": 25,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_hellhound/dg_banewolf.mdl",
+      "output": "dg_banewolf-1dhi4qy.glb",
+      "kind": "vehicle",
+      "bytes": 263512,
+      "parts": 22,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_hellhound/dg_hellhound.mdl",
+      "output": "dg_hellhound-08fb23z.glb",
+      "kind": "vehicle",
+      "bytes": 281532,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_hellhound/dg_devildog_flamer.mdl",
+      "output": "dg_devildog_flamer-1ycagn2.glb",
+      "kind": "vehicle",
+      "bytes": 319800,
+      "parts": 23,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_hellhound/dg_devildog_hb.mdl",
+      "output": "dg_devildog_hb-0efbt2f.glb",
+      "kind": "vehicle",
+      "bytes": 295360,
+      "parts": 22,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_salamander/dg_salamander_ac.mdl",
+      "output": "dg_salamander_ac-1gqlwzu.glb",
+      "kind": "vehicle",
+      "bytes": 331432,
+      "parts": 27,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_salamander/dg_salamander_dozer.mdl",
+      "output": "dg_salamander_dozer-1kfuyau.glb",
+      "kind": "vehicle",
+      "bytes": 302112,
+      "parts": 27,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_drone/chaos_drone.mdl",
+      "output": "chaos_drone-1oupxnc.glb",
+      "kind": "vehicle",
+      "bytes": 506568,
+      "parts": 8,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ_ryza/dg_lr_ac_hb.mdl",
+      "output": "dg_lr_ac_hb-06yodgu.glb",
+      "kind": "vehicle",
+      "bytes": 313600,
+      "parts": 57,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/DG_LR_AC_HB_HB.mdl",
+      "output": "dg_lr_ac_hb_hb-16q2s3e.glb",
+      "kind": "vehicle",
+      "bytes": 625604,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/dg_lr_ac_hb_pc.mdl",
+      "output": "dg_lr_ac_hb_pc-0vi3dvt.glb",
+      "kind": "vehicle",
+      "bytes": 656224,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ_ryza/dg_lr_cc_hb.mdl",
+      "output": "dg_lr_cc_hb-06o91l8.glb",
+      "kind": "vehicle",
+      "bytes": 328200,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/dg_lr_cc_hb_hb.mdl",
+      "output": "dg_lr_cc_hb_hb-157m7s4.glb",
+      "kind": "vehicle",
+      "bytes": 584488,
+      "parts": 54,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ_ryza/dg_lr_bc_hb.mdl",
+      "output": "dg_lr_bc_hb-0nvr4j7.glb",
+      "kind": "vehicle",
+      "bytes": 337184,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/dg_lr_bc_hb_hb.mdl",
+      "output": "dg_lr_bc_hb_hb-1d9h72l.glb",
+      "kind": "vehicle",
+      "bytes": 593560,
+      "parts": 54,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/DG_LR_BC_LC_HB.mdl",
+      "output": "dg_lr_bc_lc_hb-0huzmgo.glb",
+      "kind": "vehicle",
+      "bytes": 661312,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/DG_LR_BC_LC_HB_ENG.mdl",
+      "output": "dg_lr_bc_lc_hb_eng-156h103.glb",
+      "kind": "vehicle",
+      "bytes": 653748,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/possessed_leman_russ_nurgle/possessed_leman_russ_nurgle.mdl",
+      "output": "possessed_leman_russ_nurgle-0xwovgk.glb",
+      "kind": "vehicle",
+      "bytes": 821572,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_heavy/dg_macharius/dg_macharius.mdl",
+      "output": "dg_macharius-0g5pyoo.glb",
+      "kind": "vehicle",
+      "bytes": 1147696,
+      "parts": 45,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_heavy/dg_macharius/dg_macharius_ac_hkm.mdl",
+      "output": "dg_macharius_ac_hkm-1vz9abs.glb",
+      "kind": "vehicle",
+      "bytes": 1319388,
+      "parts": 61,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_heavy/dg_baneblade/dg_baneblade.mdl",
+      "output": "dg_baneblade-1w38gjq.glb",
+      "kind": "vehicle",
+      "bytes": 375528,
+      "parts": 47,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_light/dg_chimera/nurgle_chimera_lc.mdl",
+      "output": "nurgle_chimera_lc-0iv6rlb.glb",
+      "kind": "vehicle",
+      "bytes": 371588,
+      "parts": 28,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ_ryza/dg_lr_lc_hb.mdl",
+      "output": "dg_lr_lc_hb-0izkgwp.glb",
+      "kind": "vehicle",
+      "bytes": 363876,
+      "parts": 54,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/DG_LR_LC_HB_HB.mdl",
+      "output": "dg_lr_lc_hb_hb-0pcqptj.glb",
+      "kind": "vehicle",
+      "bytes": 667168,
+      "parts": 54,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/dg_lr_lc_lc_hb.mdl",
+      "output": "dg_lr_lc_lc_hb-1qg3f9m.glb",
+      "kind": "vehicle",
+      "bytes": 674884,
+      "parts": 54,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ_ryza/dg_lr_vc_hb.mdl",
+      "output": "dg_lr_vc_hb-0qc4zsv.glb",
+      "kind": "vehicle",
+      "bytes": 341632,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/DG_LR_VC_LC_HB.mdl",
+      "output": "dg_lr_vc_lc_hb-1y596p8.glb",
+      "kind": "vehicle",
+      "bytes": 669184,
+      "parts": 56,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_heavy/dg_macharius/dg_macharius_vc.mdl",
+      "output": "dg_macharius_vc-036vdto.glb",
+      "kind": "vehicle",
+      "bytes": 1186328,
+      "parts": 47,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ_ryza/dg_lr_pc_hb.mdl",
+      "output": "dg_lr_pc_hb-0628045.glb",
+      "kind": "vehicle",
+      "bytes": 316088,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/DG_LR_BC_LC_PC.mdl",
+      "output": "dg_lr_bc_lc_pc-06dbylb.glb",
+      "kind": "vehicle",
+      "bytes": 689076,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/DG_LR_PC_HB_PC.mdl",
+      "output": "dg_lr_pc_hb_pc-0z3syws.glb",
+      "kind": "vehicle",
+      "bytes": 664604,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    },
+    {
+      "source": "[40k]vehicle/Traitor_guard/deathguard/tank_medium/leman_russ/dg_lr_pc_lc_hb.mdl",
+      "output": "dg_lr_pc_lc_hb-0tqn0pq.glb",
+      "kind": "vehicle",
+      "bytes": 641712,
+      "parts": 55,
+      "unitCount": 1,
+      "skippedParts": []
+    }
+  ]
+}

@@ -1,13 +1,17 @@
-const CACHE_NAME = "indomitus-tree-2026-08-01-1";
+const CACHE_NAME = "indomitus-tree-2026-08-01-3d-1";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
   "./assets/planner.css",
+  "./assets/accessibility.css",
   "./assets/planner-data.js",
   "./assets/planner.js",
   "./assets/purchase-costs.js",
   "./assets/weapon-ranges.js",
+  "./assets/unit-models.js",
+  "./assets/vendor/model-viewer-4.3.1.min.js",
+  "./assets/vendor/model-viewer-LICENSE.txt",
   "./assets/research-images.js",
   "./assets/app-icon-192.png",
   "./assets/app-icon-512.png",
