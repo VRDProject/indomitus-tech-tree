@@ -997,24 +997,24 @@
 }
 
 .branch-tag {
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .cost-badge {
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .research-card h2 {
   min-height: 32px;
   margin-top: 6px;
   margin-bottom: 1px;
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.28;
 }
 
 .research-card .english-name {
   min-height: 14px;
-  font-size: 10px;
+  font-size: 10.5px;
 }
 
 .role-markers {
@@ -1024,7 +1024,7 @@
 .role-marker {
   width: 18px;
   height: 18px;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .card-counts {
@@ -1033,15 +1033,15 @@
 
 .card-counts span {
   padding-block: 2px;
-  font-size: 9px;
-}
-
-.card-counts b {
   font-size: 10px;
 }
 
+.card-counts b {
+  font-size: 11px;
+}
+
 .card-counts small {
-  font-size: 7.5px;
+  font-size: 9px;
 }
 
 .card-requirements {
@@ -1050,14 +1050,14 @@
 
 .card-requirements > span,
 .card-requirements em {
-  font-size: 8.5px;
+  font-size: 9.5px;
 }
 
 .card-requirements button {
-  min-height: 24px;
+  min-height: 25px;
   max-width: 82px;
   padding: 3px 5px;
-  font-size: 8.5px;
+  font-size: 10px;
 }
 
 .planner-complete-toggle {
@@ -1073,6 +1073,24 @@
 .tree-toolbar,
 .section-legend {
   font-size: 11px;
+}
+
+.tree-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.tree-toolbar > div:first-child {
+  min-width: 0;
+}
+
+.tree-toolbar > .planner-nav {
+  grid-column: 1 / -1;
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: 0;
 }
 
 .planner-minimap {
