@@ -1,4 +1,5 @@
 # Indomitus Tech Tree
+https://vrdproject.github.io/indomitus-tech-tree
 
 [Open the interactive tech tree](https://vrdproject.github.io/indomitus-tech-tree/) · [Indomitus on Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3494196322)
 
