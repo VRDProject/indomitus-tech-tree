@@ -1,9 +1,9 @@
 {
   "id": "./",
-  "name": "Call to Arms: Indomitus — Древо исследований",
+  "name": "Call to Arms: Indomitus — Research Tree",
   "short_name": "Indomitus Tree",
-  "description": "Интерактивное древо исследований мода Call to Arms: Indomitus с автономным режимом планирования.",
-  "lang": "ru",
+  "description": "Interactive research tree for the Call to Arms: Indomitus mod with offline planning mode.",
+  "lang": "en",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
