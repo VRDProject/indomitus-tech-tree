@@ -757,6 +757,7 @@
 
 .research-card > .research-image {
   cursor: zoom-in;
+  z-index: 2;
   pointer-events: auto !important;
 }
 
