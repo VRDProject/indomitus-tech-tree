@@ -1,9 +1,94 @@
 (() => {
   "use strict";
 
+  const plannerStylesheet = document.querySelector(
+    'link[href="./assets/planner.css"]',
+  );
+  if (plannerStylesheet) document.head.appendChild(plannerStylesheet);
+
   const DATA = window.INDOMITUS_PLANNER_DATA;
   let WEAPON_DATA = window.INDOMITUS_WEAPON_RANGES;
   if (!DATA?.nodes?.length) return;
+
+  const NAME_CORRECTIONS = {
+    "prog_ancil_doctrine": {
+      ru: "Вспомогательная доктрина",
+      en: "Ancillary Doctrine",
+    },
+    "squad_tanith_lasgun(ig)": {
+      ru: "(1) Пехотный отряд Танита",
+      en: "(1) Tanith Infantry Squad",
+    },
+    "squad_tanith_support(ig)": {
+      ru: "(1) Отряд поддержки Танита",
+      en: "(1) Tanith Support Squad",
+    },
+    "squad_tanith_scout(ig)": {
+      ru: "(1) Разведывательный отряд Танита",
+      en: "(1) Tanith Scout Squad",
+    },
+    "squad_storm_mech(ig)": {
+      ru: "(1) Механизированный отряд штурмовиков",
+      en: "(1) Mechanized Storm Trooper Squad",
+    },
+    "squad_dk_gorgon(ig)": {
+      ru: "(1) Штурмовой взвод «Горгона»",
+      en: "(1) Gorgon Assault Platoon",
+    },
+    "prog_daemon_summoning": {
+      ru: "Ритуалы призыва демонов",
+      en: "Daemonic Summoning Rituals",
+    },
+    "bp_fueltruck": {
+      ru: "Топливозаправщик Кровавого договора",
+      en: "Blood Pattern Fuel Truck",
+    },
+    "bp_stand_missilelauncher": {
+      ru: "Ракетная установка образца «Восс» (ПТУР)",
+      en: "Voss Pattern (HKM) Missile Launcher",
+    },
+    "dg_fueltruck": {
+      ru: "Топливозаправщик сил Нургла",
+      en: "Rot Pattern Fuel Truck",
+    },
+    "dg_stand_missilelauncher": {
+      ru: "Ракетная установка образца «Восс» (ПТУР)",
+      en: "Voss Pattern (HKM) Missile Launcher",
+    },
+    "bp_sentinel_hb": {
+      ru: "«Часовой» (ТБ)",
+      en: "Sentinel (HB)",
+    },
+    "bp_sentinel_hb_rl": {
+      ru: "«Часовой» (ТБ/НУРС)",
+      en: "Sentinel (HB/RL)",
+    },
+    "dg_salamander_toxflamer": {
+      ru: "«Саламандра» (ТОКС)",
+      en: "Salamander (TOX)",
+    },
+  };
+  const EXTERNAL_ROOT_REQUIREMENTS = new Set([
+    "single_pdf_officer(ig)",
+    "single_bp_militia_officer(tg)",
+    "single_dg_militia_officer(tg)",
+  ]);
+  const DEFAULT_SELECTIONS = {
+    ig: "squad_pdf_officer(ig)",
+    tg: "squad_bp_militia_officer(tg)",
+  };
+  const MISSING_WEAPON_CONFIGS = new Set(["ig:cyclops", "ig:ely_cyclops"]);
+
+  for (const node of DATA.nodes) {
+    const corrected = NAME_CORRECTIONS[node.id];
+    if (corrected) {
+      node.nameRu = corrected.ru;
+      node.nameEn = corrected.en;
+    }
+    node.requires = node.requires.filter(
+      (requirement) => !EXTERNAL_ROOT_REQUIREMENTS.has(requirement),
+    );
+  }
 
   if (!WEAPON_DATA) {
     const script = document.createElement("script");
@@ -20,6 +105,7 @@
   const INITIAL_PARAMS = new URLSearchParams(window.location.search);
   const INITIAL_FACTION = INITIAL_PARAMS.get("faction");
   const INITIAL_RESEARCH = INITIAL_PARAMS.get("research");
+  const INITIAL_VIEW = INITIAL_PARAMS.get("view");
   const STATUS_CLASSES = [
     "status-learned",
     "status-available",
@@ -118,6 +204,9 @@
     deferredInstallPrompt: null,
     scanQueued: false,
     searchActiveIndex: -1,
+    readableZoomApplied: false,
+    defaultSelectionRequestedFor: null,
+    applyingHistory: false,
   };
 
   function persist() {
@@ -207,6 +296,8 @@
           range: "Range",
           ammunition: "Range by ammunition",
           rangeUnavailable: "not specified numerically in the mod files",
+          weaponDataMissing:
+            "referenced weapon configuration was not found in the supplied files",
           meter: "m",
         }
       : {
@@ -259,6 +350,8 @@
           range: "Дальность",
           ammunition: "Дальность по типам боеприпасов",
           rangeUnavailable: "числовое значение не указано в файлах мода",
+          weaponDataMissing:
+            "указанная конфигурация оружия отсутствует в предоставленных файлах",
           meter: "м",
         };
   }
@@ -369,6 +462,255 @@
 
   function setText(element, value) {
     if (element && element.textContent !== value) element.textContent = value;
+  }
+
+  function applyInterfaceLocalization() {
+    const shell = document.querySelector(".app-shell");
+    if (!shell) return;
+    const english = isEnglish();
+    const glossary = shell.classList.contains("view-glossary");
+    const title = glossary
+      ? english
+        ? "Call to Arms: Indomitus — Armament Guide"
+        : "Call to Arms: Indomitus — Справочник вооружения"
+      : english
+        ? "Call to Arms: Indomitus — Research Tree"
+        : "Call to Arms: Indomitus — Древо исследований";
+    const heading = glossary
+      ? english
+        ? "Armament Guide"
+        : "Справочник вооружения"
+      : english
+        ? "Research Tree"
+        : "Древо исследований";
+    const subtitle = glossary
+      ? english
+        ? "Vehicle designations · weapon abbreviations · examples"
+        : "Обозначения техники · сокращения вооружения · примеры"
+      : english
+        ? "Research tree · unit composition · game identifiers"
+        : "Древо исследований · составы отрядов · игровые идентификаторы";
+
+    document.title = title;
+    setText(shell.querySelector(".brand-lockup h1"), heading);
+    setText(shell.querySelector(".brand-lockup p"), subtitle);
+
+    const viewButtons = shell.querySelectorAll(".view-switch button");
+    if (viewButtons.length >= 2) {
+      setText(
+        viewButtons[0].querySelector("span"),
+        english ? "Technologies & units" : "Технологии и отряды",
+      );
+      setText(
+        viewButtons[1].querySelector("span"),
+        english ? "Designations" : "Обозначения",
+      );
+    }
+
+    const fieldLabels = shell.querySelectorAll(
+      ".search-field > span:first-child, .select-field > span:first-child",
+    );
+    const fieldCopy = english
+      ? ["Search", "Branch", "Doctrine"]
+      : ["Поиск", "Раздел", "Доктрина"];
+    fieldLabels.forEach((element, index) => {
+      if (fieldCopy[index]) setText(element, fieldCopy[index]);
+    });
+    setText(
+      shell.querySelector(".composition-toggle small"),
+      english ? "Units with composition" : "Отряды и техника с указанным составом",
+    );
+
+    const glossaryEyebrow = shell.querySelector(".glossary-intro > .eyebrow");
+    setText(glossaryEyebrow, english ? "ARMAMENT KEY" : "КЛЮЧ ВООРУЖЕНИЯ");
+
+    const russianSectionLabels = new Map([
+      ["Unit composition", "Состав отряда"],
+      ["Localized names · Game IDs", "Названия · игровые ID"],
+      ["Prerequisites", "Требования"],
+      ["Infantry total", "Всего HP пехоты"],
+    ]);
+    if (!english) {
+      for (const element of shell.querySelectorAll(
+        ".section-heading span, .total-strip small",
+      )) {
+        const corrected = russianSectionLabels.get(element.textContent.trim());
+        if (corrected) setText(element, corrected);
+      }
+    }
+
+    const languageButtons = shell.querySelectorAll(".language-switch button");
+    languageButtons.forEach((button) =>
+      button.setAttribute("aria-pressed", String(button.classList.contains("active"))),
+    );
+    viewButtons.forEach((button) => {
+      const active = button.classList.contains("active");
+      button.setAttribute("aria-pressed", String(active));
+      if (active) button.setAttribute("aria-current", "page");
+      else button.removeAttribute("aria-current");
+    });
+    shell.querySelectorAll(".faction-switch button").forEach((button) =>
+      button.setAttribute("aria-pressed", String(button.classList.contains("active"))),
+    );
+
+    const minimapCanvas = shell.querySelector(".planner-minimap canvas");
+    minimapCanvas?.setAttribute(
+      "aria-label",
+      english ? "Research tree mini-map" : "Мини-карта древа исследований",
+    );
+    const minimapButton = shell.querySelector(".planner-minimap header button");
+    minimapButton?.setAttribute(
+      "aria-label",
+      state.minimapCollapsed
+        ? english
+          ? "Expand mini-map"
+          : "Развернуть мини-карту"
+        : english
+          ? "Collapse mini-map"
+          : "Свернуть мини-карту",
+    );
+  }
+
+  function applyDataCorrectionsToView() {
+    const english = isEnglish();
+    for (const card of document.querySelectorAll(".research-card")) {
+      const node = nodeFor(getCardId(card));
+      if (!node) continue;
+      setText(card.querySelector(":scope > h2"), english ? node.nameEn : node.nameRu);
+      if (!english) {
+        setText(card.querySelector(":scope > .english-name"), node.nameEn);
+      }
+      card.setAttribute(
+        "aria-label",
+        english ? node.nameEn : `${node.nameRu}. ${node.nameEn}`,
+      );
+      card.querySelectorAll(".id-fallback").forEach((element) => element.remove());
+
+      const requirements = card.querySelector(":scope > .card-requirements");
+      if (requirements && node.requires.length === 0) {
+        const onlyExternal = [...requirements.querySelectorAll("button")].every(
+          (button) => EXTERNAL_ROOT_REQUIREMENTS.has(button.textContent.trim()),
+        );
+        if (onlyExternal) requirements.remove();
+      }
+    }
+
+    const inspector = document.querySelector(".inspector");
+    const node = selectedNode();
+    if (!inspector || !node) return;
+    setText(
+      inspector.querySelector(".inspector-heading h2"),
+      english ? node.nameEn : node.nameRu,
+    );
+    if (!english) {
+      setText(inspector.querySelector(".inspector-heading p"), node.nameEn);
+    }
+    if (node.requires.length !== 0) return;
+    const requiredSection = [...inspector.querySelectorAll(".inspector-section")].find(
+      (section) =>
+        /Required research|Обязательные исследования/.test(
+          section.querySelector("h3")?.textContent || "",
+        ),
+    );
+    const list = requiredSection?.querySelector(".prerequisite-list");
+    if (list) {
+      const note = document.createElement("p");
+      note.className = "empty-note";
+      note.textContent = english
+        ? "Starting research — no prerequisites."
+        : "Начальное исследование — требований нет.";
+      list.replaceWith(note);
+    }
+  }
+
+  function nearestCard(card, direction) {
+    const current = card.getBoundingClientRect();
+    const cx = current.left + current.width / 2;
+    const cy = current.top + current.height / 2;
+    let best = null;
+    let bestScore = Number.POSITIVE_INFINITY;
+    for (const candidate of document.querySelectorAll(".research-card")) {
+      if (candidate === card) continue;
+      const rect = candidate.getBoundingClientRect();
+      const dx = rect.left + rect.width / 2 - cx;
+      const dy = rect.top + rect.height / 2 - cy;
+      const inDirection =
+        (direction === "ArrowLeft" && dx < -2) ||
+        (direction === "ArrowRight" && dx > 2) ||
+        (direction === "ArrowUp" && dy < -2) ||
+        (direction === "ArrowDown" && dy > 2);
+      if (!inDirection) continue;
+      const primary = direction === "ArrowLeft" || direction === "ArrowRight"
+        ? Math.abs(dx)
+        : Math.abs(dy);
+      const cross = direction === "ArrowLeft" || direction === "ArrowRight"
+        ? Math.abs(dy)
+        : Math.abs(dx);
+      const score = primary + cross * 2.25;
+      if (score < bestScore) {
+        best = candidate;
+        bestScore = score;
+      }
+    }
+    return best;
+  }
+
+  function ensureKeyboardNavigation() {
+    const viewport = document.querySelector(".tree-viewport");
+    const cards = [...document.querySelectorAll(".research-card")];
+    if (!viewport || cards.length === 0) return;
+
+    let help = document.getElementById("tree-keyboard-help");
+    if (!help) {
+      help = document.createElement("p");
+      help.id = "tree-keyboard-help";
+      help.className = "sr-only";
+      document.body.appendChild(help);
+    }
+    setText(
+      help,
+      isEnglish()
+        ? "Use the arrow keys to move between research cards. Press Enter to select a card."
+        : "Используйте стрелки для перехода между исследованиями. Нажмите Enter, чтобы выбрать карточку.",
+    );
+    viewport.setAttribute("role", "region");
+    viewport.setAttribute(
+      "aria-label",
+      isEnglish() ? "Interactive research tree" : "Интерактивное древо исследований",
+    );
+    viewport.setAttribute("aria-describedby", help.id);
+
+    const anchor =
+      document.activeElement?.closest?.(".research-card") ||
+      document.querySelector(".research-card.selected") ||
+      cards[0];
+    for (const card of cards) {
+      const active = card === anchor;
+      card.tabIndex = active ? 0 : -1;
+      card.querySelectorAll("button, [role='button']").forEach((control) => {
+        control.tabIndex = active ? 0 : -1;
+      });
+      if (card.dataset.keyboardNavigationBound === "true") continue;
+      card.dataset.keyboardNavigationBound = "true";
+      card.addEventListener("keydown", (event) => {
+        if (event.target !== card) return;
+        let target = null;
+        if (["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) {
+          target = nearestCard(card, event.key);
+        } else if (event.key === "Home") {
+          target = document.querySelector(".research-card");
+        } else if (event.key === "End") {
+          const all = document.querySelectorAll(".research-card");
+          target = all[all.length - 1];
+        }
+        if (!target) return;
+        event.preventDefault();
+        card.tabIndex = -1;
+        target.tabIndex = 0;
+        target.focus({ preventScroll: true });
+        centerCard(target);
+      });
+    }
   }
 
   function ensurePlanningBar() {
@@ -645,8 +987,7 @@
       );
 
       const image = card.querySelector(":scope > .research-image");
-      if (image && image.dataset.plannerImageBound !== "true") {
-        image.dataset.plannerImageBound = "true";
+      if (image) {
         image.removeAttribute("aria-hidden");
         image.setAttribute("role", "button");
         image.setAttribute("tabindex", "0");
@@ -654,10 +995,13 @@
           "aria-label",
           isEnglish() ? "Open unit image" : "Открыть изображение юнита",
         );
+      }
+      if (image && image.dataset.plannerImageBound !== "true") {
+        image.dataset.plannerImageBound = "true";
         const open = (event) => {
           event.preventDefault();
           event.stopPropagation();
-          openImage(node);
+          openImage(node, image);
         };
         image.addEventListener("click", open);
         image.addEventListener("keydown", (event) => {
@@ -758,7 +1102,25 @@
       const weapon = weaponFor(node, itemId);
       let details = names.querySelector(":scope > .composition-armament");
       if (!weapon) {
-        details?.remove();
+        const missingKey = `${node.faction}:${normalize(itemId)}`;
+        if (!MISSING_WEAPON_CONFIGS.has(missingKey)) {
+          details?.remove();
+          return;
+        }
+        if (!details) {
+          details = document.createElement("div");
+          details.className = "composition-armament unavailable";
+          code.insertAdjacentElement("afterend", details);
+        }
+        const key = `${missingKey}:${english}:missing`;
+        if (details.dataset.armamentKey !== key) {
+          details.dataset.armamentKey = key;
+          details.innerHTML = `
+            <div class="armament-weapon">
+              <span>${escapeHtml(copy.mainArmament)}</span>
+              <small>${escapeHtml(copy.weaponDataMissing)}</small>
+            </div>`;
+        }
         return;
       }
       if (!details) {
@@ -1006,16 +1368,25 @@
     if (state.initialUrlApplied) updateUrl();
   }
 
-  function updateUrl() {
+  function updateUrl(options = {}) {
     try {
       const url = new URL(window.location.href);
       url.searchParams.set("faction", activeFaction());
+      if (document.querySelector(".app-shell.view-glossary")) {
+        url.searchParams.set("view", "armament");
+      } else {
+        url.searchParams.delete("view");
+      }
       if (state.selectedId && !state.selectionCleared) {
         url.searchParams.set("research", state.selectedId);
       } else {
         url.searchParams.delete("research");
       }
-      history.replaceState(null, "", url);
+      if (options.push && url.href !== window.location.href) {
+        history.pushState(null, "", url);
+      } else {
+        history.replaceState(null, "", url);
+      }
     } catch {
       // Direct links are optional when the file is opened outside a browser URL.
     }
@@ -1134,6 +1505,32 @@
       requestAnimationFrame(step);
     };
     step();
+  }
+
+  function ensureReadableDefaultZoom() {
+    if (state.readableZoomApplied || !document.querySelector(".app-shell.view-tree")) {
+      return;
+    }
+    const faction = activeFaction();
+    state.readableZoomApplied = true;
+    if (state.viewport[faction]) return;
+    window.setTimeout(() => setScale(0.98, queueViewportSave), 120);
+  }
+
+  function ensureDefaultSelection() {
+    if (
+      !state.initialUrlApplied ||
+      state.selectionCleared ||
+      !document.querySelector(".app-shell.view-tree") ||
+      document.querySelector(".research-card.selected")
+    ) {
+      return;
+    }
+    const faction = activeFaction();
+    if (state.defaultSelectionRequestedFor === faction) return;
+    state.defaultSelectionRequestedFor = faction;
+    state.selectedId = DEFAULT_SELECTIONS[faction];
+    navigateTo(state.selectedId, { clearFilters: true, focus: false });
   }
 
   let viewportSaveTimer = 0;
@@ -1267,7 +1664,7 @@
     );
   }
 
-  function openImage(node) {
+  function openImage(node, opener) {
     document.querySelector(".planner-image-modal")?.remove();
     const mapping = window.INDOMITUS_RESEARCH_IMAGES?.[normalize(node.id)];
     if (!mapping) return;
@@ -1279,18 +1676,31 @@
     const modal = document.createElement("div");
     modal.className = "planner-image-modal";
     modal.innerHTML = `
-      <div class="planner-image-dialog section-${escapeHtml(node.section)}" role="dialog" aria-modal="true">
+      <div class="planner-image-dialog section-${escapeHtml(node.section)}" role="dialog" aria-modal="true" aria-labelledby="planner-image-title">
         <button type="button" aria-label="${isEnglish() ? "Close" : "Закрыть"}">×</button>
-        <h2>${escapeHtml(isEnglish() ? node.nameEn : node.nameRu)}</h2>
+        <h2 id="planner-image-title">${escapeHtml(isEnglish() ? node.nameEn : node.nameRu)}</h2>
         <div class="planner-image-large" role="img" aria-label="${escapeHtml(isEnglish() ? node.nameEn : node.nameRu)}"></div>
       </div>`;
     const image = modal.querySelector(".planner-image-large");
     image.style.backgroundImage = `url("${source}")`;
     image.style.backgroundSize = `${columns * cellWidth}px ${rows * cellHeight}px`;
     image.style.backgroundPosition = `${column * -cellWidth}px ${row * -cellHeight}px`;
-    const close = () => modal.remove();
+    const close = () => {
+      modal.remove();
+      if (opener?.isConnected) opener.focus({ preventScroll: true });
+    };
     modal.addEventListener("click", (event) => {
       if (event.target === modal || event.target.closest("button")) close();
+    });
+    modal.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopPropagation();
+        close();
+      } else if (event.key === "Tab") {
+        event.preventDefault();
+        modal.querySelector("button")?.focus();
+      }
     });
     document.body.appendChild(modal);
     modal.querySelector("button").focus();
@@ -1457,6 +1867,8 @@
       return;
     }
     state.initialUrlApplying = true;
+    const initialArmament =
+      INITIAL_VIEW === "armament" || INITIAL_VIEW === "glossary";
     const faction = INITIAL_FACTION;
     const initialFaction =
       INITIAL_FACTION === "ig" || INITIAL_FACTION === "tg"
@@ -1467,10 +1879,13 @@
       const buttons = document.querySelectorAll(".faction-switch button");
       if (activeFaction() !== faction) buttons[faction === "tg" ? 1 : 0]?.click();
     }
+    if (initialArmament) {
+      document.querySelectorAll(".view-switch button")[1]?.click();
+    }
     window.setTimeout(() => {
       state.initialUrlApplied = true;
       state.initialUrlApplying = false;
-      if (targetNode) {
+      if (targetNode && !initialArmament) {
         state.skipNextHistory = true;
         navigateTo(targetNode.id, {
           faction: targetNode.faction,
@@ -1480,6 +1895,7 @@
       } else {
         updateUrl();
       }
+      scheduleScan();
     }, faction && faction !== activeFaction() ? 260 : 80);
   }
 
@@ -1490,11 +1906,16 @@
     ensureSiteMeta();
     bindSearch();
     bindCards();
+    applyDataCorrectionsToView();
     applyStatuses();
     ensureInspector();
     ensureMinimap();
+    applyInterfaceLocalization();
+    ensureKeyboardNavigation();
     bindViewport();
     applyInitialUrl();
+    ensureDefaultSelection();
+    ensureReadableDefaultZoom();
   }
 
   document.addEventListener("click", (event) => {
@@ -1516,20 +1937,30 @@
       }, 20);
     }
 
+    const factionButton = event.target.closest(".faction-switch button");
+    const viewButton = event.target.closest(".view-switch button");
     if (
       event.target.closest(
         ".faction-switch button, .language-switch button, .view-switch button, .section-legend button, .clear-search",
       )
     ) {
+      if (factionButton) state.defaultSelectionRequestedFor = null;
       window.setTimeout(() => {
         state.lastRestoredFaction = null;
         syncSelection();
-        updateUrl();
+        updateUrl({
+          push: Boolean(viewButton && !state.initialUrlApplying && !state.applyingHistory),
+        });
         scheduleScan();
       }, 50);
     }
 
-    if (event.target.closest(".zoom-controls button")) {
+    const zoomButton = event.target.closest(".zoom-controls button");
+    if (zoomButton) {
+      const buttons = [...zoomButton.parentElement.querySelectorAll("button")];
+      if (zoomButton === buttons[2]) {
+        window.setTimeout(() => setScale(0.98, queueViewportSave), 20);
+      }
       window.setTimeout(queueViewportSave, 80);
     }
   });
@@ -1571,7 +2002,7 @@
     }
     if (event.key === "Escape") {
       const modal = document.querySelector(".planner-image-modal");
-      if (modal) modal.remove();
+      if (modal) modal.querySelector("button")?.click();
       else clearSelection();
       return;
     }
@@ -1583,6 +2014,33 @@
       document.querySelectorAll(".zoom-controls button")[0]?.click();
     }
   }, true);
+
+  window.addEventListener("popstate", () => {
+    state.applyingHistory = true;
+    const params = new URLSearchParams(window.location.search);
+    const armament = ["armament", "glossary"].includes(params.get("view"));
+    const viewButtons = document.querySelectorAll(".view-switch button");
+    const desiredView = viewButtons[armament ? 1 : 0];
+    if (desiredView && !desiredView.classList.contains("active")) desiredView.click();
+
+    const faction = params.get("faction");
+    if ((faction === "ig" || faction === "tg") && faction !== activeFaction()) {
+      document.querySelectorAll(".faction-switch button")[faction === "tg" ? 1 : 0]?.click();
+    }
+
+    window.setTimeout(() => {
+      const research = params.get("research");
+      if (!armament && nodeFor(research, activeFaction())) {
+        state.skipNextHistory = true;
+        navigateTo(research, { clearFilters: true, focus: false });
+      } else if (!armament) {
+        state.defaultSelectionRequestedFor = null;
+        ensureDefaultSelection();
+      }
+      state.applyingHistory = false;
+      scheduleScan();
+    }, 180);
+  });
 
   window.addEventListener("resize", drawMinimap);
   window.addEventListener("beforeinstallprompt", (event) => {
