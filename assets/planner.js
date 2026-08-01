@@ -3,7 +3,6 @@
 
   const DATA = window.INDOMITUS_PLANNER_DATA;
   let WEAPON_DATA = window.INDOMITUS_WEAPON_RANGES;
-  const MODEL_DATA = window.INDOMITUS_UNIT_MODELS;
   if (!DATA?.nodes?.length) return;
 
   if (!WEAPON_DATA) {
@@ -106,9 +105,7 @@
   const state = {
     planningEnabled: saved.planningEnabled !== false,
     compact: saved.compact === true,
-    minimapCollapsed:
-      saved.minimapCollapsed === true ||
-      (saved.minimapCollapsed == null && window.innerWidth <= 1440),
+    minimapCollapsed: saved.minimapCollapsed === true,
     viewport: saved.viewport || {},
     selectedId: null,
     selectionCleared: false,
@@ -121,10 +118,6 @@
     deferredInstallPrompt: null,
     scanQueued: false,
     searchActiveIndex: -1,
-    mobileInspectorOpen: false,
-    mobileInspectorReturnFocus: null,
-    mobileInspectorReturnId: null,
-    modelSelection: {},
   };
 
   function persist() {
@@ -215,23 +208,6 @@
           ammunition: "Range by ammunition",
           rangeUnavailable: "not specified numerically in the mod files",
           meter: "m",
-          openImage: "Open unit image",
-          armamentDetails: "Armament and range",
-          openDetails: "Open research details",
-          closeDetails: "Close research details",
-          collapse: "Collapse",
-          expand: "Expand",
-          modelPreview: "Interactive 3D model",
-          modelUnit: "Unit model",
-          modelReset: "Reset view",
-          modelRotate: "Auto-rotate",
-          modelFullscreen: "Full screen",
-          modelLoading: "Loading 3D model",
-          modelReady: "Drag to rotate · scroll or pinch to zoom",
-          modelError: "The 3D model could not be displayed.",
-          modelUnavailable: "No extracted model is available for this unit.",
-          modelNote:
-            "Static mod geometry. Materials are simplified where textures exist only in the base game.",
         }
       : {
           planning: "Режим «Планирование»",
@@ -284,23 +260,6 @@
           ammunition: "Дальность по типам боеприпасов",
           rangeUnavailable: "числовое значение не указано в файлах мода",
           meter: "м",
-          openImage: "Открыть изображение юнита",
-          armamentDetails: "Вооружение и дальность",
-          openDetails: "Открыть сведения об исследовании",
-          closeDetails: "Закрыть сведения об исследовании",
-          collapse: "Свернуть",
-          expand: "Развернуть",
-          modelPreview: "Интерактивная 3D-модель",
-          modelUnit: "Модель юнита",
-          modelReset: "Сбросить вид",
-          modelRotate: "Автовращение",
-          modelFullscreen: "На весь экран",
-          modelLoading: "Загрузка 3D-модели",
-          modelReady: "Тяните для вращения · колесо или жест для масштаба",
-          modelError: "Не удалось отобразить 3D-модель.",
-          modelUnavailable: "Для этого юнита извлечённая модель недоступна.",
-          modelNote:
-            "Статическая геометрия мода. Материалы упрощены, если текстуры есть только в базовой игре.",
         };
   }
 
@@ -552,15 +511,9 @@
     if (!dropdown) {
       dropdown = document.createElement("div");
       dropdown.className = "planner-search-results";
-      dropdown.id = "research-search-results";
-      dropdown.setAttribute("role", "listbox");
       dropdown.hidden = true;
       field.appendChild(dropdown);
     }
-    input.setAttribute("role", "combobox");
-    input.setAttribute("aria-autocomplete", "list");
-    input.setAttribute("aria-controls", dropdown.id);
-    input.setAttribute("aria-expanded", dropdown.hidden ? "false" : "true");
 
     if (input.dataset.plannerSearchBound !== "true") {
       input.dataset.plannerSearchBound = "true";
@@ -590,29 +543,14 @@
         } else {
           return;
         }
-        buttons.forEach((button, index) => {
-          const active = index === state.searchActiveIndex;
-          button.classList.toggle("active", active);
-          button.setAttribute("aria-selected", active ? "true" : "false");
-        });
-        input.setAttribute(
-          "aria-activedescendant",
-          buttons[state.searchActiveIndex]?.id || "",
+        buttons.forEach((button, index) =>
+          button.classList.toggle("active", index === state.searchActiveIndex),
         );
         buttons[state.searchActiveIndex]?.scrollIntoView({ block: "nearest" });
       });
       input.addEventListener("blur", () => {
         window.setTimeout(() => {
-          if (!field.contains(document.activeElement)) {
-            dropdown.hidden = true;
-            input.setAttribute("aria-expanded", "false");
-            input.removeAttribute("aria-activedescendant");
-            state.searchActiveIndex = -1;
-            dropdown.querySelectorAll('[role="option"]').forEach((option) => {
-              option.classList.remove("active");
-              option.setAttribute("aria-selected", "false");
-            });
-          }
+          if (!field.contains(document.activeElement)) dropdown.hidden = true;
         }, 120);
       });
     }
@@ -630,9 +568,6 @@
     const query = input.value.trim().toLocaleLowerCase("ru");
     if (!query) {
       dropdown.hidden = true;
-      input.setAttribute("aria-expanded", "false");
-      input.removeAttribute("aria-activedescendant");
-      state.searchActiveIndex = -1;
       setText(count, "");
       return;
     }
@@ -653,8 +588,8 @@
         </div>
         ${visibleMatches
           .map(
-            (node, index) => `
-            <button type="button" role="option" tabindex="-1" aria-selected="false" id="research-search-option-${index}" data-research-id="${escapeHtml(node.id)}">
+            (node) => `
+            <button type="button" data-research-id="${escapeHtml(node.id)}">
               <span>
                 <strong>${escapeHtml(isEnglish() ? node.nameEn : node.nameRu)}</strong>
                 <small>${escapeHtml(node.id)} · ${escapeHtml(isEnglish() ? node.sectionEn : node.sectionRu)}</small>
@@ -671,13 +606,6 @@
           );
           button.addEventListener("click", () => {
             dropdown.hidden = true;
-            input.setAttribute("aria-expanded", "false");
-            input.removeAttribute("aria-activedescendant");
-            state.searchActiveIndex = -1;
-            dropdown.querySelectorAll('[role="option"]').forEach((option) => {
-              option.classList.remove("active");
-              option.setAttribute("aria-selected", "false");
-            });
             navigateTo(button.dataset.researchId, {
               clearFilters: true,
               focus: true,
@@ -687,71 +615,6 @@
     }
     setText(count, String(matches.length));
     dropdown.hidden = matches.length === 0;
-    input.setAttribute("aria-expanded", matches.length ? "true" : "false");
-    if (!matches.length) {
-      input.removeAttribute("aria-activedescendant");
-      state.searchActiveIndex = -1;
-      dropdown.querySelectorAll('[role="option"]').forEach((option) => {
-        option.classList.remove("active");
-        option.setAttribute("aria-selected", "false");
-      });
-    }
-  }
-
-  function moveCardFocus(card, key) {
-    const sourceRect = card.getBoundingClientRect();
-    const source = {
-      x: sourceRect.left + sourceRect.width / 2,
-      y: sourceRect.top + sourceRect.height / 2,
-    };
-    const horizontal = key === "ArrowLeft" || key === "ArrowRight";
-    const direction = key === "ArrowLeft" || key === "ArrowUp" ? -1 : 1;
-    let best = null;
-    let bestScore = Number.POSITIVE_INFINITY;
-
-    for (const candidate of document.querySelectorAll(".research-card")) {
-      if (
-        candidate === card ||
-        candidate.classList.contains("planner-filter-hidden") ||
-        candidate.offsetParent === null
-      ) {
-        continue;
-      }
-      const rect = candidate.getBoundingClientRect();
-      const dx = rect.left + rect.width / 2 - source.x;
-      const dy = rect.top + rect.height / 2 - source.y;
-      const primary = horizontal ? dx : dy;
-      const secondary = horizontal ? dy : dx;
-      if (primary * direction <= 6) continue;
-      const score = Math.abs(primary) + Math.abs(secondary) * 1.8;
-      if (score < bestScore) {
-        best = candidate;
-        bestScore = score;
-      }
-    }
-
-    if (!best) return;
-    best.click();
-    best.focus({ preventScroll: true });
-    centerCard(best);
-    scheduleScan();
-  }
-
-  function updateCardTabStops() {
-    const cards = [...document.querySelectorAll(".research-card")];
-    const selected =
-      cards.find((card) => card.classList.contains("selected")) ||
-      cards.find(
-        (card) => normalize(getCardId(card)) === normalize(state.selectedId),
-      ) ||
-      cards.find(
-        (card) =>
-          card.offsetParent !== null &&
-          !card.classList.contains("planner-filter-hidden"),
-      );
-    cards.forEach((card) => {
-      card.tabIndex = card === selected ? 0 : -1;
-    });
   }
 
   function bindCards() {
@@ -760,11 +623,6 @@
       const id = getCardId(card);
       const node = nodeFor(id);
       if (!node) continue;
-      const primaryName = isEnglish() ? node.nameEn : node.nameRu;
-      card.querySelector("h2")?.setAttribute("title", primaryName);
-      card
-        .querySelector(".english-name")
-        ?.setAttribute("title", isEnglish() ? node.nameRu : node.nameEn);
 
       let toggle = card.querySelector(":scope > .planner-complete-toggle");
       if (!toggle) {
@@ -778,7 +636,6 @@
         });
         card.appendChild(toggle);
       }
-      toggle.tabIndex = -1;
       const isLearned = learned[node.faction].has(normalize(node.id));
       setText(toggle, isLearned ? "✓" : "○");
       toggle.title = isLearned ? copy.markUnlearned : copy.markLearned;
@@ -791,31 +648,20 @@
       if (image && image.dataset.plannerImageBound !== "true") {
         image.dataset.plannerImageBound = "true";
         image.removeAttribute("aria-hidden");
-        image.setAttribute("role", "img");
-        image.setAttribute("tabindex", "-1");
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
         image.setAttribute(
           "aria-label",
-          isEnglish() ? node.nameEn : node.nameRu,
+          isEnglish() ? "Open unit image" : "Открыть изображение юнита",
         );
-      }
-
-      card
-        .querySelectorAll(":scope > .card-requirements button")
-        .forEach((button) => {
-          button.tabIndex = -1;
-        });
-
-      if (card.dataset.plannerKeyboardBound !== "true") {
-        card.dataset.plannerKeyboardBound = "true";
-        card.addEventListener("keydown", (event) => {
-          if (
-            ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(
-              event.key,
-            )
-          ) {
-            event.preventDefault();
-            moveCardFocus(card, event.key);
-          }
+        const open = (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          openImage(node);
+        };
+        image.addEventListener("click", open);
+        image.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") open(event);
         });
       }
 
@@ -826,7 +672,6 @@
         }
       }
     }
-    updateCardTabStops();
   }
 
   function applyStatuses() {
@@ -850,10 +695,6 @@
       card.classList.toggle("planner-on-path", path.has(normalize(node.id)));
       card.dataset.plannerStatus = status;
       card.dataset.statusLabel = statusLabel(status, copy);
-      card.setAttribute(
-        "aria-label",
-        `${isEnglish() ? node.nameEn : node.nameRu}, ${statusLabel(status, copy)}`,
-      );
     }
 
     for (const pathElement of document.querySelectorAll(
@@ -881,380 +722,22 @@
     }
   }
 
-  function inspectorFocusableElements(inspector) {
-    if (!inspector) return [];
-    return [...inspector.querySelectorAll(
-      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
-    )].filter((element) => {
-      const style = window.getComputedStyle(element);
-      return !element.hidden && style.display !== "none" && style.visibility !== "hidden";
-    });
-  }
-
-  function setInspectorBackgroundInert(inert) {
-    document.documentElement.classList.toggle("inspector-dialog-open", inert);
-    document
-      .querySelectorAll(
-        ".command-header, .control-deck, .planning-bar, .tree-panel, .mobile-inspector-toggle",
-      )
-      .forEach((element) => {
-        element.inert = inert;
-      });
-  }
-
-  function updateInspectorDialogSemantics(inspector, open) {
-    if (!inspector) return;
-    if (open) {
-      inspector.inert = false;
-      const heading = inspector.querySelector(".inspector-heading h2");
-      if (heading) {
-        heading.id = "research-inspector-title";
-        inspector.setAttribute("aria-labelledby", heading.id);
-      }
-      inspector.setAttribute("role", "dialog");
-      inspector.setAttribute("aria-modal", "true");
-      inspector.removeAttribute("aria-hidden");
-    } else {
-      inspector.removeAttribute("role");
-      inspector.removeAttribute("aria-modal");
-      inspector.removeAttribute("aria-labelledby");
-      if (window.matchMedia("(max-width: 1024px)").matches) {
-        inspector.inert = true;
-        inspector.setAttribute("aria-hidden", "true");
-      } else {
-        inspector.inert = false;
-        inspector.removeAttribute("aria-hidden");
-      }
-    }
-  }
-
-  function setMobileInspector(open) {
-    const shell = document.querySelector(".app-shell");
-    if (!shell) return;
-    const inspector = shell.querySelector(".inspector");
-    const mobile = window.matchMedia("(max-width: 1024px)").matches;
-    const nextOpen = Boolean(open && mobile);
-    if (nextOpen && !state.mobileInspectorOpen) {
-      const active = document.activeElement;
-      const activeCard = active?.closest?.(".research-card");
-      if (activeCard) {
-        state.mobileInspectorReturnId = getCardId(activeCard);
-      }
-      state.mobileInspectorReturnFocus =
-        active instanceof HTMLElement &&
-        active !== document.body &&
-        active !== document.documentElement &&
-        !inspector?.contains(active)
-          ? active
-          : null;
-    }
-    state.mobileInspectorOpen = nextOpen;
-    shell.classList.toggle(
-      "mobile-inspector-open",
-      state.mobileInspectorOpen,
-    );
-    const toggle = shell.querySelector(".mobile-inspector-toggle");
-    if (toggle) {
-      toggle.setAttribute(
-        "aria-expanded",
-        state.mobileInspectorOpen ? "true" : "false",
-      );
-    }
-    updateInspectorDialogSemantics(inspector, state.mobileInspectorOpen);
-    setInspectorBackgroundInert(state.mobileInspectorOpen);
-
-    if (state.mobileInspectorOpen) {
-      window.requestAnimationFrame(() => {
-        inspector?.querySelector(".mobile-inspector-close")?.focus();
-      });
-    } else {
-      const returnFocus =
-        (state.mobileInspectorReturnFocus?.isConnected
-          ? state.mobileInspectorReturnFocus
-          : cardFor(state.mobileInspectorReturnId)) ||
-        shell.querySelector(".mobile-inspector-toggle");
-      state.mobileInspectorReturnFocus = null;
-      state.mobileInspectorReturnId = null;
-      if (returnFocus instanceof HTMLElement && returnFocus.isConnected) {
-        window.requestAnimationFrame(() => returnFocus.focus());
-      }
-    }
-  }
-
-  function ensureMobileInspectorControls(inspector, node) {
-    const shell = document.querySelector(".app-shell");
-    if (!shell) return;
-    shell.classList.toggle(
-      "mobile-inspector-open",
-      state.mobileInspectorOpen,
-    );
-    const hasSelection = Boolean(node && !state.selectionCleared);
-    shell.classList.toggle("has-selection", hasSelection);
-    if (!hasSelection && state.mobileInspectorOpen) setMobileInspector(false);
-
-    let toggle = shell.querySelector(":scope > .mobile-inspector-toggle");
-    if (!toggle) {
-      toggle = document.createElement("button");
-      toggle.type = "button";
-      toggle.className = "mobile-inspector-toggle";
-      toggle.dataset.plannerAction = "toggle-inspector";
-      toggle.setAttribute("aria-controls", "research-inspector");
-      shell.appendChild(toggle);
-    }
-
-    let backdrop = shell.querySelector(":scope > .mobile-inspector-backdrop");
-    if (!backdrop) {
-      backdrop = document.createElement("button");
-      backdrop.type = "button";
-      backdrop.className = "mobile-inspector-backdrop";
-      backdrop.dataset.plannerAction = "close-inspector";
-      backdrop.tabIndex = -1;
-      shell.appendChild(backdrop);
-    }
-
-    let rail = inspector.querySelector(":scope > .mobile-inspector-rail");
-    if (!rail) {
-      rail = document.createElement("div");
-      rail.className = "mobile-inspector-rail";
-      inspector.prepend(rail);
-    }
-
-    let close = inspector.querySelector(".mobile-inspector-close");
-    if (!close) {
-      close = document.createElement("button");
-      close.type = "button";
-      close.className = "mobile-inspector-close";
-      close.dataset.plannerAction = "close-inspector";
-      close.textContent = "×";
-    }
-    if (close.parentElement !== rail) rail.appendChild(close);
-
-    const copy = labels();
-    setText(toggle, copy.openDetails);
-    toggle.setAttribute(
-      "aria-expanded",
-      state.mobileInspectorOpen ? "true" : "false",
-    );
-    close.setAttribute("aria-label", copy.closeDetails);
-    backdrop.setAttribute("aria-label", copy.closeDetails);
-    inspector.id = "research-inspector";
-    updateInspectorDialogSemantics(inspector, state.mobileInspectorOpen);
-  }
-
-  function ensureInspectorImageAction(inspector, node) {
-    const idRow = inspector.querySelector(".id-row");
-    if (!idRow) return;
-    let button = inspector.querySelector(".inspector-image-action");
-    if (!button) {
-      button = document.createElement("button");
-      button.type = "button";
-      button.className = "inspector-image-action";
-      button.dataset.plannerAction = "open-image";
-      idRow.insertAdjacentElement("afterend", button);
-    }
-    setText(button, labels().openImage);
-  }
-
-  function ensureInspectorSectionToggles(inspector) {
-    inspector.querySelectorAll(".inspector-section").forEach((section) => {
-      const heading = section.querySelector(":scope > .section-heading");
-      if (!heading) return;
-      let button = heading.querySelector(".inspector-section-toggle");
-      if (!button) {
-        button = document.createElement("button");
-        button.type = "button";
-        button.className = "inspector-section-toggle";
-        const count = section.querySelectorAll(
-          ".composition-list > div",
-        ).length;
-        if (count > 5) section.classList.add("is-collapsed");
-        button.addEventListener("click", () => {
-          section.classList.toggle("is-collapsed");
-          const expanded = !section.classList.contains("is-collapsed");
-          button.textContent = expanded ? "−" : "+";
-          button.setAttribute("aria-expanded", expanded ? "true" : "false");
-        });
-        heading.appendChild(button);
-      }
-      const expanded = !section.classList.contains("is-collapsed");
-      button.textContent = expanded ? "−" : "+";
-      button.setAttribute("aria-expanded", expanded ? "true" : "false");
-      const title = heading.querySelector("h3")?.textContent?.trim() || "";
-      const copy = labels();
-      button.setAttribute(
-        "aria-label",
-        `${expanded ? copy.collapse : copy.expand}: ${title}`,
-      );
-    });
-  }
-
   function ensureInspector() {
     const inspector = document.querySelector(".inspector");
     const node = selectedNode();
-    if (!inspector) return;
-    ensureMobileInspectorControls(inspector, node);
-    if (!node || state.selectionCleared) return;
-    if (inspector.dataset.researchId !== node.id) {
-      inspector.dataset.researchId = node.id;
-      inspector.scrollTop = 0;
-    }
+    if (!inspector || !node || state.selectionCleared) return;
 
-    ensureInspectorImageAction(inspector, node);
     ensurePlannerSummary(inspector, node);
     ensureCopyActions(inspector, node);
-    ensureUnitModelViewer(inspector, node);
     ensureArmamentDetails(inspector, node);
     updateDependencyCosts(inspector, node);
     ensureUnlocks(inspector, node);
-    ensureInspectorSectionToggles(inspector);
   }
 
   function weaponFor(node, itemId) {
     return WEAPON_DATA?.units?.[
       `${node.faction}:${normalize(itemId)}`
     ];
-  }
-
-  function modelFor(node, itemId) {
-    return MODEL_DATA?.units?.[`${node.faction}:${normalize(itemId)}`];
-  }
-
-  function ensureUnitModelViewer(inspector, node) {
-    let section = inspector.querySelector(".unit-model-panel");
-    if (!section) {
-      section = document.createElement("section");
-      section.className = "inspector-section unit-model-panel";
-      const anchor =
-        inspector.querySelector(".planner-copy-actions") ||
-        inspector.querySelector(".inspector-image-action") ||
-        inspector.querySelector(".id-row");
-      anchor?.insertAdjacentElement("afterend", section);
-    }
-
-    const copy = labels();
-    const english = isEnglish();
-    const choices = node.composition.items
-      .map((item) => ({ item, model: modelFor(node, item.id) }))
-      .filter(({ model }) => Boolean(model));
-    const key = `${node.faction}:${node.id}:${english}:${MODEL_DATA?.meta?.dataVersion || "none"}`;
-    if (section.dataset.modelKey === key) return;
-    section.dataset.modelKey = key;
-
-    if (!choices.length) {
-      section.innerHTML = `
-        <div class="section-heading">
-          <h3>${escapeHtml(copy.modelPreview)}</h3>
-          <span>3D</span>
-        </div>
-        <p class="empty-note">${escapeHtml(copy.modelUnavailable)}</p>`;
-      return;
-    }
-
-    const selectionKey = `${node.faction}:${node.id}`;
-    const savedId = state.modelSelection[selectionKey];
-    const selected = choices.find(({ item }) => item.id === savedId) || choices[0];
-    section.innerHTML = `
-      <div class="section-heading">
-        <h3>${escapeHtml(copy.modelPreview)}</h3>
-        <span>${choices.length} GLB</span>
-      </div>
-      <label class="unit-model-select">
-        <span>${escapeHtml(copy.modelUnit)}</span>
-        <select>
-          ${choices
-            .map(({ item }) => {
-              const name = english ? item.nameEn : item.nameRu;
-              return `<option value="${escapeHtml(item.id)}"${
-                item.id === selected.item.id ? " selected" : ""
-              }>${item.count} × ${escapeHtml(name)}</option>`;
-            })
-            .join("")}
-        </select>
-      </label>
-      <div class="unit-model-stage">
-        <model-viewer
-          camera-controls
-          touch-action="pan-y"
-          interaction-prompt="auto"
-          shadow-intensity="0.9"
-          shadow-softness="0.8"
-          exposure="0.85"
-          environment-image="neutral"
-          loading="lazy"
-          reveal="auto"
-          camera-orbit="45deg 72deg auto"
-          field-of-view="32deg"
-        ></model-viewer>
-        <div class="unit-model-status" role="status" aria-live="polite"></div>
-      </div>
-      <p class="unit-model-note">${escapeHtml(copy.modelNote)}</p>
-      <div class="unit-model-controls">
-        <button type="button" data-model-action="reset">${escapeHtml(copy.modelReset)}</button>
-        <button type="button" data-model-action="rotate" aria-pressed="false">${escapeHtml(copy.modelRotate)}</button>
-        <button type="button" data-model-action="fullscreen">${escapeHtml(copy.modelFullscreen)}</button>
-      </div>`;
-
-    const select = section.querySelector("select");
-    const viewer = section.querySelector("model-viewer");
-    const stage = section.querySelector(".unit-model-stage");
-    const status = section.querySelector(".unit-model-status");
-    const rotate = section.querySelector('[data-model-action="rotate"]');
-
-    let modelLoadComplete = false;
-    const loadChoice = (itemId) => {
-      const choice = choices.find(({ item }) => item.id === itemId) || choices[0];
-      state.modelSelection[selectionKey] = choice.item.id;
-      modelLoadComplete = false;
-      status.hidden = false;
-      status.classList.remove("is-error");
-      status.textContent = `${copy.modelLoading} · 0%`;
-      viewer.removeAttribute("auto-rotate");
-      rotate.setAttribute("aria-pressed", "false");
-      viewer.setAttribute(
-        "aria-label",
-        `${copy.modelPreview}: ${english ? choice.item.nameEn : choice.item.nameRu}`,
-      );
-      viewer.src = choice.model.src;
-    };
-
-    select.addEventListener("change", () => loadChoice(select.value));
-    viewer.addEventListener("progress", (event) => {
-      if (modelLoadComplete) return;
-      const progress = Math.round((event.detail?.totalProgress || 0) * 100);
-      status.textContent = `${copy.modelLoading} · ${progress}%`;
-    });
-    viewer.addEventListener("load", () => {
-      modelLoadComplete = true;
-      status.textContent = copy.modelReady;
-      window.setTimeout(() => {
-        if (status.textContent === copy.modelReady) status.hidden = true;
-      }, 2800);
-    });
-    viewer.addEventListener("error", () => {
-      modelLoadComplete = true;
-      status.hidden = false;
-      status.classList.add("is-error");
-      status.textContent = copy.modelError;
-    });
-    section.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-model-action]");
-      if (!button) return;
-      const action = button.dataset.modelAction;
-      if (action === "reset") {
-        viewer.cameraOrbit = "45deg 72deg auto";
-        viewer.cameraTarget = "auto auto auto";
-        viewer.fieldOfView = "32deg";
-        viewer.jumpCameraToGoal?.();
-      } else if (action === "rotate") {
-        const enabled = !viewer.hasAttribute("auto-rotate");
-        viewer.toggleAttribute("auto-rotate", enabled);
-        button.setAttribute("aria-pressed", enabled ? "true" : "false");
-      } else if (action === "fullscreen") {
-        stage.requestFullscreen?.();
-      }
-    });
-
-    loadChoice(selected.item.id);
   }
 
   function rangeLabel(range, copy) {
@@ -1279,7 +762,7 @@
         return;
       }
       if (!details) {
-        details = document.createElement("details");
+        details = document.createElement("div");
         details.className = "composition-armament";
         code.insertAdjacentElement("afterend", details);
       }
@@ -1292,10 +775,7 @@
       const showAmmunition =
         weapon.gunLike && Array.isArray(weapon.ammunition) &&
         weapon.ammunition.length > 0;
-      const wasOpen = details.open;
       details.innerHTML = `
-        <summary>${escapeHtml(copy.armamentDetails)}</summary>
-        <div class="composition-armament-body">
         <div class="armament-weapon">
           <span>${escapeHtml(copy.mainArmament)}</span>
           <strong>${escapeHtml(primaryName)}</strong>
@@ -1339,18 +819,15 @@
                 </ul>
               </div>`
             : ""
-        }
-        </div>`;
-      details.open = wasOpen;
+        }`;
     });
   }
 
   function ensurePlannerSummary(inspector, node) {
     let panel = inspector.querySelector(".planner-summary");
     if (!panel) {
-      panel = document.createElement("details");
+      panel = document.createElement("section");
       panel.className = "planner-summary";
-      panel.open = true;
       const anchor =
         inspector.querySelector(".purchase-cost-panel") ||
         inspector.querySelector(".id-row");
@@ -1369,14 +846,12 @@
     const remaining = total - accounted;
     const key = `${node.id}:${isEnglish()}:${[...factionLearned].join("|")}`;
     if (panel.dataset.summaryKey === key) return;
-    const wasOpen = panel.open;
     panel.dataset.summaryKey = key;
     const selectedLearned = factionLearned.has(normalize(node.id));
     panel.innerHTML = `
-      <summary class="planner-summary-toggle">${escapeHtml(copy.targetPlan)}</summary>
-      <div class="planner-summary-body">
       <div class="planner-summary-head">
         <div>
+          <h3>${escapeHtml(copy.targetPlan)}</h3>
           <p>${escapeHtml(copy.targetPlanNote)}</p>
         </div>
         <button type="button" class="planner-action-button${selectedLearned ? " complete" : ""}" data-planner-action="toggle-selected">
@@ -1403,9 +878,7 @@
             })
             .join("")}
         </div>
-      </details>
-      </div>`;
-    panel.open = wasOpen;
+      </details>`;
   }
 
   function ensureCopyActions(inspector, node) {
@@ -1530,8 +1003,6 @@
     }
     state.skipNextHistory = false;
     state.selectedId = id;
-    const inspector = document.querySelector(".inspector");
-    if (inspector) inspector.scrollTop = 0;
     if (state.initialUrlApplied) updateUrl();
   }
 
@@ -1943,13 +1414,6 @@
     else if (action === "show-all") showAll();
     else if (action === "show-branch") showBranch();
     else if (action === "center") centerCard(cardFor(state.selectedId));
-    else if (action === "toggle-inspector") {
-      setMobileInspector(!state.mobileInspectorOpen);
-    } else if (action === "close-inspector") {
-      setMobileInspector(false);
-    } else if (action === "open-image" && node) {
-      openImage(node);
-    }
     else if (action === "toggle-cards") {
       state.compact = !state.compact;
       persist();
@@ -2045,13 +1509,9 @@
 
     const card = event.target.closest(".research-card");
     if (card) {
-      state.mobileInspectorReturnId = getCardId(card);
       state.selectionCleared = false;
       window.setTimeout(() => {
         syncSelection();
-        if (window.matchMedia("(max-width: 1024px)").matches) {
-          setMobileInspector(true);
-        }
         scheduleScan();
       }, 20);
     }
@@ -2095,32 +1555,6 @@
   });
 
   document.addEventListener("keydown", (event) => {
-    if (
-      state.mobileInspectorOpen &&
-      event.key === "Tab" &&
-      window.matchMedia("(max-width: 1024px)").matches
-    ) {
-      const inspector = document.querySelector(".inspector");
-      const focusable = inspectorFocusableElements(inspector);
-      if (!focusable.length) {
-        event.preventDefault();
-        inspector?.focus();
-        return;
-      }
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      } else if (!inspector?.contains(document.activeElement)) {
-        event.preventDefault();
-        first.focus();
-      }
-      return;
-    }
     const editing =
       event.target instanceof HTMLInputElement ||
       event.target instanceof HTMLTextAreaElement ||
@@ -2138,7 +1572,6 @@
     if (event.key === "Escape") {
       const modal = document.querySelector(".planner-image-modal");
       if (modal) modal.remove();
-      else if (state.mobileInspectorOpen) setMobileInspector(false);
       else clearSelection();
       return;
     }
@@ -2151,18 +1584,7 @@
     }
   }, true);
 
-  window.addEventListener("resize", () => {
-    drawMinimap();
-    if (
-      state.mobileInspectorOpen &&
-      !window.matchMedia("(max-width: 1024px)").matches
-    ) {
-      setMobileInspector(false);
-    } else if (!window.matchMedia("(max-width: 1024px)").matches) {
-      updateInspectorDialogSemantics(document.querySelector(".inspector"), false);
-      setInspectorBackgroundInert(false);
-    }
-  });
+  window.addEventListener("resize", drawMinimap);
   window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
     state.deferredInstallPrompt = event;
