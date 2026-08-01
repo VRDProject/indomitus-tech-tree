@@ -1,4 +1,4 @@
-const CACHE_NAME = "indomitus-tree-2026-08-01-1";
+const CACHE_NAME = "indomitus-tree-2026-08-01-2";
 const APP_SHELL = [
   "./",
   "./index.html",
