@@ -464,6 +464,21 @@
     if (element && element.textContent !== value) element.textContent = value;
   }
 
+  function setRenderedText(element, value) {
+    if (!element) return;
+    if (!element.style.getPropertyValue("--planner-text-size")) {
+      const computed = getComputedStyle(element);
+      element.style.setProperty("--planner-text-size", computed.fontSize);
+      element.style.setProperty("--planner-text-line-height", computed.lineHeight);
+      element.style.setProperty(
+        "--planner-text-letter-spacing",
+        computed.letterSpacing,
+      );
+    }
+    element.dataset.plannerText = String(value ?? "");
+    element.setAttribute("aria-label", String(value ?? ""));
+  }
+
   function setPlannerHidden(element, hidden) {
     if (!element) return;
     element.toggleAttribute("data-planner-hidden", hidden);
@@ -499,18 +514,28 @@
         : "Древо исследований · составы отрядов · игровые идентификаторы";
 
     document.title = title;
-    setText(shell.querySelector(".brand-lockup h1"), heading);
-    setText(shell.querySelector(".brand-lockup p"), subtitle);
+    setRenderedText(shell.querySelector(".brand-lockup h1"), heading);
+    setRenderedText(shell.querySelector(".brand-lockup p"), subtitle);
 
     const viewButtons = shell.querySelectorAll(".view-switch button");
     if (viewButtons.length >= 2) {
-      setText(
+      setRenderedText(
         viewButtons[0].querySelector("span"),
         english ? "Technologies & units" : "Технологии и отряды",
       );
-      setText(
+      setRenderedText(
         viewButtons[1].querySelector("span"),
         english ? "Designations" : "Обозначения",
+      );
+      viewButtons[0].setAttribute(
+        "aria-label",
+        english
+          ? "Research Tree — Technologies & units"
+          : "Древо — Технологии и отряды",
+      );
+      viewButtons[1].setAttribute(
+        "aria-label",
+        english ? "Armament Guide — Designations" : "Вооружение — Обозначения",
       );
     }
 
@@ -521,29 +546,35 @@
       ? ["Search", "Branch", "Doctrine"]
       : ["Поиск", "Раздел", "Доктрина"];
     fieldLabels.forEach((element, index) => {
-      if (fieldCopy[index]) setText(element, fieldCopy[index]);
+      if (fieldCopy[index]) setRenderedText(element, fieldCopy[index]);
     });
-    setText(
+    setRenderedText(
       shell.querySelector(".composition-toggle small"),
       english ? "Units with composition" : "Отряды и техника с указанным составом",
     );
 
     const glossaryEyebrow = shell.querySelector(".glossary-intro > .eyebrow");
-    setText(glossaryEyebrow, english ? "ARMAMENT KEY" : "КЛЮЧ ВООРУЖЕНИЯ");
+    setRenderedText(
+      glossaryEyebrow,
+      english ? "ARMAMENT KEY" : "КЛЮЧ ВООРУЖЕНИЯ",
+    );
 
-    const russianSectionLabels = new Map([
-      ["Unit composition", "Состав отряда"],
-      ["Localized names · Game IDs", "Названия · игровые ID"],
-      ["Prerequisites", "Требования"],
-      ["Infantry total", "Всего HP пехоты"],
+    const sectionLabels = new Map([
+      ["Unit composition", ["Unit composition", "Состав отряда"]],
+      ["Состав отряда", ["Unit composition", "Состав отряда"]],
+      ["Localized names · Game IDs", ["Localized names · Game IDs", "Названия · игровые ID"]],
+      ["Названия · игровые ID", ["Localized names · Game IDs", "Названия · игровые ID"]],
+      ["Prerequisites", ["Prerequisites", "Требования"]],
+      ["Требования", ["Prerequisites", "Требования"]],
+      ["Infantry total", ["Infantry total", "Всего HP пехоты"]],
+      ["Всего HP пехоты", ["Infantry total", "Всего HP пехоты"]],
     ]);
-    if (!english) {
-      for (const element of shell.querySelectorAll(
-        ".section-heading span, .total-strip small",
-      )) {
-        const corrected = russianSectionLabels.get(element.textContent.trim());
-        if (corrected) setText(element, corrected);
-      }
+    for (const element of shell.querySelectorAll(
+      ".section-heading span, .total-strip small",
+    )) {
+      const source = element.dataset.plannerText || element.textContent.trim();
+      const corrected = sectionLabels.get(source);
+      if (corrected) setRenderedText(element, corrected[english ? 0 : 1]);
     }
 
     const languageButtons = shell.querySelectorAll(".language-switch button");
@@ -583,9 +614,12 @@
     for (const card of document.querySelectorAll(".research-card")) {
       const node = nodeFor(getCardId(card));
       if (!node) continue;
-      setText(card.querySelector(":scope > h2"), english ? node.nameEn : node.nameRu);
+      setRenderedText(
+        card.querySelector(":scope > h2"),
+        english ? node.nameEn : node.nameRu,
+      );
       if (!english) {
-        setText(card.querySelector(":scope > .english-name"), node.nameEn);
+        setRenderedText(card.querySelector(":scope > .english-name"), node.nameEn);
       }
       card.setAttribute(
         "aria-label",
@@ -607,12 +641,12 @@
     const inspector = document.querySelector(".inspector");
     const node = selectedNode();
     if (!inspector || !node) return;
-    setText(
+    setRenderedText(
       inspector.querySelector(".inspector-heading h2"),
       english ? node.nameEn : node.nameRu,
     );
     if (!english) {
-      setText(inspector.querySelector(".inspector-heading p"), node.nameEn);
+      setRenderedText(inspector.querySelector(".inspector-heading p"), node.nameEn);
     }
     const requiredSection = [...inspector.querySelectorAll(".inspector-section")].find(
       (section) =>
