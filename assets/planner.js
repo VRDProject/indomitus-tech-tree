@@ -464,6 +464,13 @@
     if (element && element.textContent !== value) element.textContent = value;
   }
 
+  function setPlannerHidden(element, hidden) {
+    if (!element) return;
+    element.toggleAttribute("data-planner-hidden", hidden);
+    if (hidden) element.setAttribute("aria-hidden", "true");
+    else element.removeAttribute("aria-hidden");
+  }
+
   function applyInterfaceLocalization() {
     const shell = document.querySelector(".app-shell");
     if (!shell) return;
@@ -584,14 +591,16 @@
         "aria-label",
         english ? node.nameEn : `${node.nameRu}. ${node.nameEn}`,
       );
-      card.querySelectorAll(".id-fallback").forEach((element) => element.remove());
+      card
+        .querySelectorAll(".id-fallback")
+        .forEach((element) => setPlannerHidden(element, true));
 
       const requirements = card.querySelector(":scope > .card-requirements");
       if (requirements && node.requires.length === 0) {
         const onlyExternal = [...requirements.querySelectorAll("button")].every(
           (button) => EXTERNAL_ROOT_REQUIREMENTS.has(button.textContent.trim()),
         );
-        if (onlyExternal) requirements.remove();
+        setPlannerHidden(requirements, onlyExternal);
       }
     }
 
@@ -605,7 +614,6 @@
     if (!english) {
       setText(inspector.querySelector(".inspector-heading p"), node.nameEn);
     }
-    if (node.requires.length !== 0) return;
     const requiredSection = [...inspector.querySelectorAll(".inspector-section")].find(
       (section) =>
         /Required research|Обязательные исследования/.test(
@@ -613,13 +621,15 @@
         ),
     );
     const list = requiredSection?.querySelector(".prerequisite-list");
-    if (list) {
-      const note = document.createElement("p");
-      note.className = "empty-note";
-      note.textContent = english
+    if (!requiredSection) return;
+    if (node.requires.length === 0) {
+      requiredSection.dataset.plannerEmptyNote = english
         ? "Starting research — no prerequisites."
         : "Начальное исследование — требований нет.";
-      list.replaceWith(note);
+      setPlannerHidden(list, true);
+    } else {
+      delete requiredSection.dataset.plannerEmptyNote;
+      setPlannerHidden(list, false);
     }
   }
 
@@ -684,16 +694,27 @@
       document.activeElement?.closest?.(".research-card") ||
       document.querySelector(".research-card.selected") ||
       cards[0];
+    setRovingAnchor(anchor, cards);
     for (const card of cards) {
-      const active = card === anchor;
-      card.tabIndex = active ? 0 : -1;
-      card.querySelectorAll("button, [role='button']").forEach((control) => {
-        control.tabIndex = active ? 0 : -1;
-      });
       if (card.dataset.keyboardNavigationBound === "true") continue;
       card.dataset.keyboardNavigationBound = "true";
       card.addEventListener("keydown", (event) => {
         if (event.target !== card) return;
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          event.stopPropagation();
+          const id = getCardId(card);
+          card.click();
+          window.setTimeout(() => {
+            syncSelection();
+            const selected = cardFor(id) || card;
+            setRovingAnchor(selected);
+            selected.focus({ preventScroll: true });
+            updateUrl();
+            scheduleScan();
+          }, 60);
+          return;
+        }
         let target = null;
         if (["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) {
           target = nearestCard(card, event.key);
@@ -705,10 +726,20 @@
         }
         if (!target) return;
         event.preventDefault();
-        card.tabIndex = -1;
-        target.tabIndex = 0;
+        setRovingAnchor(target);
         target.focus({ preventScroll: true });
         centerCard(target);
+      });
+    }
+  }
+
+  function setRovingAnchor(anchor, cards = null) {
+    const allCards = cards || [...document.querySelectorAll(".research-card")];
+    for (const card of allCards) {
+      const active = card === anchor;
+      card.tabIndex = active ? 0 : -1;
+      card.querySelectorAll("button, [role='button']").forEach((control) => {
+        control.tabIndex = active ? 0 : -1;
       });
     }
   }
