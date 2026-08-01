@@ -897,3 +897,397 @@
     justify-content: flex-start;
   }
 }
+
+/* Readability and accessibility pass */
+.app-shell.view-glossary > .planning-bar,
+.app-shell.view-glossary .planner-minimap {
+  display: none !important;
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+}
+
+:where(button, a, input, select, [role="button"]):focus-visible {
+  outline: 2px solid #f1cf83 !important;
+  outline-offset: 2px;
+}
+
+.language-switch button,
+.view-switch button,
+.site-meta-actions a,
+.site-meta-actions button,
+.planner-nav button,
+.planner-action-button,
+.planner-copy-actions button,
+.zoom-controls button,
+.section-legend button {
+  min-height: 32px;
+  font-size: 11px;
+}
+
+.control-deck input,
+.control-deck select {
+  min-height: 42px;
+  font-size: 13px;
+}
+
+.search-field > span,
+.select-field > span {
+  font-size: 10px;
+}
+
+.faction-switch button {
+  min-height: 58px;
+}
+
+.faction-switch strong {
+  font-size: 13px;
+}
+
+.faction-switch small {
+  font-size: 10px;
+}
+
+.site-version {
+  font-size: 9px;
+}
+
+.planning-mode-toggle strong {
+  font-size: 12px;
+}
+
+.planning-mode-toggle small,
+.planning-progress,
+.planning-status-legend span {
+  font-size: 10px;
+}
+
+.planning-status-legend i {
+  width: 9px;
+  height: 9px;
+}
+
+.planner-search-count,
+.planner-search-summary,
+.planner-search-results em {
+  font-size: 10px;
+}
+
+.planner-search-results button {
+  min-height: 44px;
+  padding: 9px 10px;
+}
+
+.planner-search-results strong {
+  font-size: 12px;
+}
+
+.planner-search-results small {
+  font-size: 10px;
+}
+
+.branch-tag {
+  font-size: 9px;
+}
+
+.cost-badge {
+  font-size: 10px;
+}
+
+.research-card h2 {
+  min-height: 32px;
+  margin-top: 6px;
+  margin-bottom: 1px;
+  font-size: 12.5px;
+  line-height: 1.28;
+}
+
+.research-card .english-name {
+  min-height: 14px;
+  font-size: 10px;
+}
+
+.role-markers {
+  grid-template-columns: repeat(3, 18px);
+}
+
+.role-marker {
+  width: 18px;
+  height: 18px;
+  font-size: 9px;
+}
+
+.card-counts {
+  margin-top: 5px;
+}
+
+.card-counts span {
+  padding-block: 2px;
+  font-size: 9px;
+}
+
+.card-counts b {
+  font-size: 10px;
+}
+
+.card-counts small {
+  font-size: 7.5px;
+}
+
+.card-requirements {
+  margin-top: 4px;
+}
+
+.card-requirements > span,
+.card-requirements em {
+  font-size: 8.5px;
+}
+
+.card-requirements button {
+  min-height: 24px;
+  max-width: 82px;
+  padding: 3px 5px;
+  font-size: 8.5px;
+}
+
+.planner-complete-toggle {
+  width: 28px;
+  height: 28px;
+  font-size: 15px;
+}
+
+.app-shell.planner-active .research-card .cost-badge {
+  margin-right: 31px;
+}
+
+.tree-toolbar,
+.section-legend {
+  font-size: 11px;
+}
+
+.planner-minimap {
+  width: 242px;
+}
+
+.planner-minimap header {
+  font-size: 10px;
+}
+
+.planner-minimap button {
+  min-width: 24px;
+  min-height: 24px;
+  font-size: 14px;
+}
+
+.planner-minimap canvas {
+  width: 226px;
+  height: 144px;
+}
+
+.inspector-heading h2 {
+  font-size: 28px;
+}
+
+.inspector-heading p,
+.inspector-cost,
+.id-row code,
+.id-row button {
+  font-size: 11px;
+}
+
+.id-row button {
+  min-height: 32px;
+  padding-inline: 8px;
+}
+
+.source-note,
+.planner-summary p,
+.empty-note,
+.health-note {
+  font-size: 10.5px;
+}
+
+.section-heading h3 {
+  font-size: 14px;
+}
+
+.section-heading span,
+.metric-grid span,
+.metric-grid small,
+.total-strip small {
+  font-size: 10px;
+}
+
+.metric-grid strong {
+  font-size: 22px;
+}
+
+.total-strip span,
+.total-strip strong {
+  font-size: 11px;
+}
+
+.composition-list > div {
+  min-height: 76px;
+  padding: 11px 9px;
+}
+
+.composition-names > strong {
+  font-size: 12px;
+}
+
+.composition-names > small {
+  font-size: 10.5px;
+}
+
+.composition-names > code,
+.composition-list .composition-kind,
+.composition-health {
+  font-size: 10px;
+}
+
+.composition-meta > strong {
+  font-size: 12px;
+}
+
+.composition-health small {
+  font-size: 9px;
+}
+
+.prerequisite-list button,
+.planner-accounted-list button {
+  min-height: 44px;
+}
+
+.prerequisite-list strong,
+.planner-summary h3 {
+  font-size: 12px;
+}
+
+.prerequisite-list small,
+.prerequisite-list em,
+.prerequisite-list .planner-dependency-cost,
+.planner-accounted-list button,
+.planner-accounted-list em,
+.planner-accounted summary {
+  font-size: 10px;
+}
+
+.planner-metrics span {
+  font-size: 10px;
+}
+
+.planner-metrics strong {
+  font-size: 15px;
+}
+
+.armament-weapon > span,
+.armament-range > span,
+.armament-ammunition > span {
+  font-size: 10px;
+}
+
+.armament-weapon > strong {
+  font-size: 12px;
+}
+
+.armament-weapon > small,
+.armament-range > small,
+.armament-ammunition li small {
+  font-size: 10px;
+}
+
+.armament-range > strong,
+.armament-ammunition li b {
+  font-size: 12px;
+}
+
+.armament-ammunition li strong {
+  font-size: 11px;
+}
+
+.planner-tooltip,
+.planner-toast {
+  font-size: 11px;
+}
+
+.planner-image-dialog h2 {
+  font-size: 18px;
+}
+
+.planner-image-dialog button {
+  width: 44px;
+  height: 44px;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+}
+
+.glossary-summary,
+.decode-example p,
+.glossary-grid article > div:last-child > p:last-child {
+  font-size: 11px;
+}
+
+.decode-example code {
+  font-size: 12px;
+}
+
+.glossary-grid h3,
+.code-plate {
+  font-size: 14px;
+}
+
+@media (width <= 820px) {
+  .language-switch button,
+  .view-switch button,
+  .site-meta-actions a,
+  .site-meta-actions button,
+  .planner-nav button,
+  .planner-action-button,
+  .planner-copy-actions button,
+  .zoom-controls button,
+  .section-legend button,
+  .control-deck input,
+  .control-deck select {
+    min-height: 44px;
+  }
+
+  .planner-nav {
+    width: 100%;
+  }
+
+  .planner-nav button {
+    flex: 1 1 148px;
+  }
+
+  .tree-toolbar,
+  .section-legend {
+    gap: 8px;
+  }
+
+  .inspector {
+    padding-inline: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
